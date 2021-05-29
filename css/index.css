@@ -1,0 +1,43 @@
+.top {
+  height: calc(100vh - 3.5rem);
+  padding: 0 10%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  background-color: #6E3DD9;
+  background-image: url("../img/icon.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: left center;
+  color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.top div {
+  padding: 2.5rem 0;
+}
+
+@media screen and (max-width: 1067px) {
+  .top {
+    background-image: none;
+  }
+  .top div {
+    background-image: url("../img/icon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

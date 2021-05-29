@@ -1,0 +1,37 @@
+$color-main: #6E3DD9;
+$color-white: #fff;
+$color-light: #F6F6F6;
+$color-dark: #23272A;
+
+.top {
+    height: calc(100vh - 3.5rem);
+    padding: 0 10%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    background-color: $color-main;
+    background-image: url("../img/icon.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: left center;
+    color: $color-white;
+    user-select: none;
+
+    div {
+        padding: 2.5rem 0;
+    }
+
+    @media screen and (max-width: 1067px) {
+        background-image: none;
+
+        div {
+            background-image: url("../img/icon.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
