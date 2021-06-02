@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: left center;
-  color: #fff;
+  color: #FFF;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -40,4 +40,51 @@
     background-size: cover;
     background-position: center;
   }
+}
+
+.function {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.function .item {
+  width: 20rem;
+  margin: .5rem;
+  padding: .5rem;
+  background-color: #F6F6F6;
+  border: 0.25rem solid #23272A;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.function .item img {
+  max-width: 100%;
+  max-height: 10rem;
+}
+
+.function .item p:first-child {
+  font-size: 1.3rem;
+}
+
+.introduce {
+  padding: 10rem 0;
+}
+
+a.btn {
+  padding: 1rem 2rem;
+  border: 0.25rem solid #6E3DD9;
+  border-radius: 1rem;
+  background: #6E3DD9;
+  color: #FFF;
+}
+
+a.btn:hover {
+  background-color: #FFF;
+  color: #6E3DD9;
 }

@@ -1,5 +1,6 @@
 $color-main: #6E3DD9;
-$color-white: #fff;
+$color-sub: #D90DA2;
+$color-white: #FFF;
 $color-light: #F6F6F6;
 $color-dark: #23272A;
 
@@ -33,5 +34,47 @@ $color-dark: #23272A;
             background-size: cover;
             background-position: center;
         }
+    }
+}
+
+.function {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .item {
+        width: 20rem;
+        margin: .5rem;
+        padding: .5rem;
+        background-color: $color-light;
+        border: .25rem solid $color-dark;
+        border-radius: 1rem;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            max-height: 10rem;
+        }
+
+        p:first-child {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.introduce {
+    padding: 10rem 0;
+}
+
+a.btn {
+    padding: 1rem 2rem;
+    border: 0.25rem solid $color-main;
+    border-radius: 1rem;
+    background: $color-main;
+    color: $color-white;
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-main;
     }
 }

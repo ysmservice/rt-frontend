@@ -5,9 +5,19 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #FFF;
   color: #23272A;
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+::-moz-selection {
+  background-color: #6E3DD9;
+  color: #FFF;
+}
+
+::selection {
+  background-color: #6E3DD9;
+  color: #FFF;
 }
 
 header {
@@ -28,7 +38,7 @@ header {
   background-color: #6E3DD9;
   -webkit-box-shadow: 0 0.5rem 1.5rem 0 #6E3DD9;
           box-shadow: 0 0.5rem 1.5rem 0 #6E3DD9;
-  color: #fff;
+  color: #FFF;
   z-index: 100;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -37,7 +47,7 @@ header {
 }
 
 header a {
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
   opacity: 1;
   -webkit-transition: all 500ms 0s ease-in-out;
@@ -108,7 +118,7 @@ header .menu .menu-btn div {
   height: .25rem;
   width: 2rem;
   position: relative;
-  background-color: #fff;
+  background-color: #FFF;
   border-radius: 100rem;
   -webkit-transition: all 500ms 0s ease-in-out;
   transition: all 500ms 0s ease-in-out;
@@ -171,7 +181,7 @@ header .menu .menu-list .account .dropdown {
   right: calc(10% - .5rem);
   display: none;
   z-index: 100;
-  background-color: #fff;
+  background-color: #FFF;
   border: 0.5rem solid #6E3DD9;
   border-radius: 1rem;
   color: #6E3DD9;
@@ -188,7 +198,7 @@ header .menu .menu-list .account .dropdown a {
 
 header .menu .menu-list .account .dropdown a:hover {
   background-color: #23272A;
-  color: #fff;
+  color: #FFF;
   opacity: 1;
 }
 
@@ -204,10 +214,25 @@ header .menu .menu-list .account .dropdown a:hover {
   }
 }
 
+.content {
+  padding: 3rem 10%;
+}
+
+.content a {
+  color: #6E3DD9;
+  text-decoration: none;
+  -webkit-transition: all 500ms 0s ease-in-out;
+  transition: all 500ms 0s ease-in-out;
+}
+
+.content a:hover {
+  color: #D90DA2;
+}
+
 footer {
   padding: 1.5rem 10%;
   background-color: #23272A;
-  color: #fff;
+  color: #FFF;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -229,7 +254,7 @@ footer .menu img {
 }
 
 footer .menu a {
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
   opacity: 1;
   -webkit-transition: all 500ms 0s ease-in-out;
@@ -254,7 +279,7 @@ footer .menu .menu-list .item {
 
 footer .menu .menu-list .item .title {
   font-size: 1.3rem;
-  border-bottom: 0.1rem solid #fff;
+  border-bottom: 0.1rem solid #FFF;
 }
 
 footer .menu .menu-list .item div:first-child {
