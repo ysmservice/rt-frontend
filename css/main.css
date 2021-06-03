@@ -202,7 +202,7 @@ header .menu .menu-list .account .dropdown a:hover {
   opacity: 1;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 911px) {
   header .menu .margin {
     display: none;
   }
