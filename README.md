@@ -76,6 +76,20 @@
     </a>
 ```
 
+⑥ `help.html`のL5~L14に説明を書き込む。
+```html
+    <a href="https://rt-bot.com/help/bot" class="item" data-description="{{ 説明 }}">Bot関連</a>
+    <a href="https://rt-bot.com/help/server-tool" class="item" data-description="{{ 説明 }}">サーバー(ツール)</a>
+    <a href="https://rt-bot.com/help/server-panel" class="item" data-description="{{ 説明 }}">サーバー(パネル)</a>
+    <a href="https://rt-bot.com/help/server-safety" class="item" data-description="{{ 説明 }}">サーバー(安全)</a>
+    <a href="https://rt-bot.com/help/server-useful" class="item" data-description="{{ 説明 }}">サーバー(便利)</a>
+    <a href="https://rt-bot.com/help/individual" class="item" data-description="{{ 説明 }}">個人</a>
+    <a href="https://rt-bot.com/help/entertainment" class="item" data-description="{{ 説明 }}">娯楽</a>
+    <a href="https://rt-bot.com/help/chplugin" class="item" data-description="{{ 説明 }}">チャンネルプラグイン</a>
+    <a href="https://rt-bot.com/help/mybot" class="item" data-description="{{ 説明 }}">MyBot</a>
+    <a href="https://rt-bot.com/help/other" class="item" data-description="{{ 説明 }}">その他</a>
+```
+
 ### CSS
 基本的に`***.min.css`だけを本番環境にぶち込めばいい。
 
@@ -87,8 +101,6 @@
 ## TODO
 ### 今から
 ・RT紹介動画を作る
-
-・`help.html`(`help/index.html`)を作る
 
 ・`help/bot.html`を作る
 
