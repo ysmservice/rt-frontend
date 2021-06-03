@@ -29,12 +29,52 @@
                 -->
 ```
 
-③ `main.html`のL52のところにコンテンツを埋め込む
+③ `main.html`のL52のところにコンテンツを埋め込む。
 ```html
     <!-- ここに埋め込む -->
 ```
 
+④ `index.html`のL6~L9を紹介動画のURLにする。
+```html
+    <!-- RTの紹介動画に変える -->
+    <iframe width="480" height="270" src="https://www.youtube.com/embed/9KsZ3Zi6NJg?rel=0" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+```
+
 ④ `index.html`のL13~L136の機能紹介のところを書き、写真を貼り付ける。
+```html
+        <div class="item">
+            <p>メッセージ削除</p>
+            <p>{{ 説明 }}</p>
+            <img src="img/404.png">
+            <p>
+                <a href="https://rt-bot.com/help/server-tool/delmes">ヘルプを見る</a>
+            </p>
+        </div>
+        <!-- 長いので省略 -->
+        <div class="item">
+            <p>カスタムBot</p>
+            <p>{{ 説明 }}</p>
+            <img src="img/404.png">
+            <p>
+                <a href="https://rt-bot.com/help/mybot">ヘルプを見る</a>
+            </p>
+        </div>
+```
+
+⑤ `news.html`のL5~L13でニュースを一覧で表示する。書き方は以下を参考にする。
+```html
+    <!-- ここにニュースを埋め込む -->
+    <a href="https://rt-bot.com/news/2" class="item">
+        <div>テスト②</div>
+        <div>2021/06/03</div>
+    </a>
+    <a href="https://rt-bot.com/news/2" class="item">
+        <div>テスト①</div>
+        <div>2021/06/03</div>
+    </a>
+```
 
 ### CSS
 基本的に`***.min.css`だけを本番環境にぶち込めばいい。
@@ -47,10 +87,6 @@
 ## TODO
 ### 今から
 ・RT紹介動画を作る
-
-・`index.html`を作る
-
-・`news.html`を作る
 
 ・`help.html`(`help/index.html`)を作る
 

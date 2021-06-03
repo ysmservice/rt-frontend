@@ -210,6 +210,13 @@ header {
     }
 }
 
+.title {
+    margin: 0;
+    padding: 10rem 10%;
+    background: $color-main;
+    color: $color-white;
+}
+
 .content {
     padding: 3rem 10%;
     
@@ -258,7 +265,7 @@ footer {
             .item {
                 margin: 0 1rem;
 
-                .title {
+                .m-title {
                     font-size: 1.3rem;
                     border-bottom: .1rem solid $color-white;
                 }

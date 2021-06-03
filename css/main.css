@@ -214,6 +214,13 @@ header .menu .menu-list .account .dropdown a:hover {
   }
 }
 
+.title {
+  margin: 0;
+  padding: 10rem 10%;
+  background: #6E3DD9;
+  color: #FFF;
+}
+
 .content {
   padding: 3rem 10%;
 }
@@ -277,7 +284,7 @@ footer .menu .menu-list .item {
   margin: 0 1rem;
 }
 
-footer .menu .menu-list .item .title {
+footer .menu .menu-list .item .m-title {
   font-size: 1.3rem;
   border-bottom: 0.1rem solid #FFF;
 }
