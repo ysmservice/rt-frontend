@@ -128,7 +128,6 @@
 すべて本番環境にぶち込む。
 
 ## TODO
-### 今から
 ・RT紹介動画を作る
 
 ・`help/bot.html`を作る
@@ -164,8 +163,3 @@
 ・`dashboard/logout.html`を作る
 
 ・本番環境に移行する
-
-### 完了
-・`main.html`を作る
-
-・`main.min.css`を作る
