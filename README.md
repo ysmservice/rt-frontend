@@ -52,7 +52,7 @@
                 <a href="https://rt-bot.com/help/server-tool/delmes">ヘルプを見る</a>
             </p>
         </div>
-        <!-- 長いので省略 -->
+        <!-- 省略 -->
         <div class="item">
             <p>カスタムBot</p>
             <p>{{ 説明 }}</p>
@@ -90,6 +90,35 @@
     <a href="https://rt-bot.com/help/other" class="item" data-description="{{ 説明 }}">その他</a>
 ```
 
+⑦ `credit.html`のL24~L95のプロフィールを書く。
+```html
+    <!-- 紹介文を書き換える -->
+    <h2>tasuren</h2>
+    <div class="icon">
+        <img src="img/tasuren.png">
+        <div>
+            <p>
+                <span class="group c-1">プログラム班</span>
+                <span class="group c-2">Web開発班</span>
+            </p>
+            <p>僕がRTの開発をし始めた張本人です。</p>
+            <p>現在高校一年生です。</p>
+            <p>自称クソガキッズですがなるべくクソガキッズではないようにしたいと思っています。</p>
+        </div>
+    </div>
+    <!-- 省略 -->
+    <h2>Rice cake</h2>
+    <div class="icon">
+        <img src="img/ricecake.gif">
+        <div>
+            <p>
+                <span class="group c-3">デザイン班</span>
+            </p>
+            <p>{{ profile }}</p>
+        </div>
+    </div>
+```
+
 ### CSS
 基本的に`***.min.css`だけを本番環境にぶち込めばいい。
 
@@ -121,8 +150,6 @@
 ・`help/mybot.html`を作る
 
 ・`help/other.html`を作る
-
-・`credit.html`を作る
 
 ・`status.html`を作る
 

@@ -3,3 +3,40 @@ $color-sub: #D90DA2;
 $color-white: #FFF;
 $color-light: #F6F6F6;
 $color-dark: #23272A;
+
+.content {
+    h1, h2 {
+        border-bottom: .25rem solid;
+    }
+    
+    .icon {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 10rem;
+            width: 10rem;
+            margin-right: 1rem;
+        }
+    }
+
+    .group {
+        padding: .25rem .5rem;
+        border-radius: 100rem;
+        color: $color-white;
+        cursor: pointer;
+        user-select: none;
+
+        &.c-1 {
+            background-color: #3498db;
+        }
+
+        &.c-2 {
+            background-color: #1abc9c;
+        }
+
+        &.c-3 {
+            background-color: #9b59b6;
+        }
+    }
+}
