@@ -90,7 +90,7 @@
     <a href="https://rt-bot.com/help/other" class="item" data-description="{{ 説明 }}">その他</a>
 ```
 
-⑦ `credit.html`のL24~L95のプロフィールを書く。
+⑦ `credit.html`のL24~L93のプロフィールを書く。
 ```html
     <!-- 紹介文を書き換える -->
     <h2>tasuren</h2>
@@ -101,9 +101,9 @@
                 <span class="group c-1">プログラム班</span>
                 <span class="group c-2">Web開発班</span>
             </p>
-            <p>僕がRTの開発をし始めた張本人です。</p>
-            <p>現在高校一年生です。</p>
-            <p>自称クソガキッズですがなるべくクソガキッズではないようにしたいと思っています。</p>
+            僕がRTの開発をし始めた張本人です。<br>
+            現在高校一年生です。<br>
+            自称クソガキッズですがなるべくクソガキッズではないようにしたいと思っています。
         </div>
     </div>
     <!-- 省略 -->
@@ -114,7 +114,7 @@
             <p>
                 <span class="group c-3">デザイン班</span>
             </p>
-            <p>{{ profile }}</p>
+            {{ profile }}
         </div>
     </div>
 ```
