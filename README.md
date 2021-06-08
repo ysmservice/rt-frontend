@@ -10,7 +10,7 @@
 ### `/account/`
 現在ログインしているアカウントについての情報を返します。
 
-```json
+```js
 {
   "login": true, // true or false
   "status": "ok", // ok or otherwise
@@ -21,7 +21,7 @@
 ## `/news/`
 ニュースの一覧を返します。APIとWEBでは表示される順番が逆になることに注意してください。
 
-```json
+```js
 {
   "1": [
     "サンプル①", // news title
@@ -42,7 +42,7 @@
 ## `/news/<int:news_number>/`
 ニュースの詳細データを返します。
 
-```json
+```js
 {
   "content": "あいうえお<be>...", // news content (HTML is available.)
   "date": "2021/06/05", // news date
@@ -54,7 +54,7 @@
 ## `/help/<group_name>/`
 ヘルプの一覧を返します。
 
-```json
+```js
 {
   "1": [
     "help", // command name
@@ -72,7 +72,7 @@
 ## `/help/<group_name>/<command_name>/`
 コマンドの詳細なヘルプ。
 
-```json
+```js
 {
   "content": "ヘルプコマンド...", // command description
   "g-title": "Bot関連", // group name
