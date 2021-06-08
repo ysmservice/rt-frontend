@@ -5,6 +5,7 @@
 * `credit.html` の紹介文を書き換える
 * `status.html` を作る
 * `js/main.js` の `BASE_URL` を書き直す
+* ↓ のようなAPIをたすれんに作ってもらう
 
 ## APIについて
 ### `/account/`
