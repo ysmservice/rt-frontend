@@ -88,6 +88,7 @@ $(function () {
         });
     };
 
+    // status.html
     if (location.pathname == "/status.html") {
         $.ajax({
             url: `${BASE_URL}/status/`,
