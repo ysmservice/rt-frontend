@@ -3,7 +3,7 @@
 * `index.html` の紹介動画のURLを変更する
 * `index.html` の紹介文を書き換える
 * `credit.html` の紹介文を書き換える
-* `status.html` を作る
+* `status.html` の手直しをする
 * `js/main.js` の `BASE_URL` を書き直す
 * ↓ のようなAPIをたすれんに作ってもらう
 
