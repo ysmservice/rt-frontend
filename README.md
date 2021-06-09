@@ -86,13 +86,13 @@ RTのステータス。
 
 ```js
 {
-  "cpu": [2, 3], // List of cpu utilization
-  "disk": [], // List of disk utilization
-  "labels": [], // A list of times every 10 minutes from 24 hours ago (See the status function in API_saple/main.py for more information.)
-  "memory": [], // List of memory utilization
-  "ping": [], // List of ping values
-  "server": [], // List of number of servers
+  "cpu": [1.0], // List of cpu utilization
+  "disk": [19.8], // List of disk utilization
+  "labels": ["06/09 21:50"], // A list of times every 10 minutes from 24 hours ago (See the status function in API_saple/main.py for more information.)
+  "memory": [43.5], // List of memory utilization
+  "ping": [105], // List of ping values
+  "server": [400], // List of number of servers
   "status": "ok", // ok or otherwise
-  "user": [], // List of number of users
+  "user": [19255], // List of number of users
 }
 ```
