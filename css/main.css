@@ -140,18 +140,10 @@ header .menu .menu-list .m {
   margin: 0 .5rem;
 }
 
-header .menu .menu-list .m:first-child {
-  margin: 0 .5rem 0 0;
-}
-
-header .menu .menu-list .m:last-child {
-  margin: 0 0 0 .5rem;
-}
-
 header .menu .menu-list .login {
   padding: .75rem 1rem !important;
   border-radius: 100rem;
-  background-color: #fff;
+  background-color: #FFF;
   color: #6E3DD9;
 }
 
@@ -166,7 +158,7 @@ header .menu .menu-list .account:hover .dropdown {
 header .menu .menu-list .account .name {
   padding: .75rem 1rem;
   border-radius: 100rem;
-  background-color: #fff;
+  background-color: #FFF;
   color: #6E3DD9;
   opacity: 1;
   -webkit-transition: all 500ms 0s ease-in-out;
@@ -206,7 +198,7 @@ header .menu .menu-list .account .dropdown a:hover {
   opacity: 1;
 }
 
-@media screen and (max-width: 911px) {
+@media screen and (max-width: 933px) {
   header .menu .margin {
     display: none;
   }
@@ -410,6 +402,13 @@ header .menu .menu-list .account .dropdown a:hover {
 
 .terms-html h1, .terms-html h2 {
   border-bottom: .25rem solid;
+}
+
+.status-html hr {
+  height: .25rem;
+  margin: 2rem 0;
+  border: none;
+  background: #23272A;
 }
 
 footer {

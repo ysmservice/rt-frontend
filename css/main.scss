@@ -126,21 +126,13 @@ header {
 
             .m {
                 margin: 0 .5rem;
-    
-                &:first-child {
-                    margin: 0 .5rem 0 0;
-                }
-    
-                &:last-child {
-                    margin: 0 0 0 .5rem;
-                }
             }
     
             .login {
                 padding: .75rem 1rem !important;
                 border-radius: 100rem;
-                background-color: #fff;
-                color: #6E3DD9;
+                background-color: $color-white;
+                color: $color-main;
             }
     
             .account {
@@ -155,8 +147,8 @@ header {
                 .name {
                     padding: .75rem 1rem;
                     border-radius: 100rem;
-                    background-color: #fff;
-                    color: #6E3DD9;
+                    background-color: $color-white;
+                    color: $color-main;
                     opacity: 1;
                     transition: all 500ms 0s ease-in-out;
     
@@ -196,7 +188,7 @@ header {
             }
         }
     
-        @media screen and (max-width: 911px) {
+        @media screen and (max-width: 933px) {
             .margin {
                 display: none;
             }
@@ -383,6 +375,15 @@ header {
 .terms-html {
     h1, h2 {
         border-bottom: .25rem solid;
+    }
+}
+
+.status-html {
+    hr {
+        height: .25rem;
+        margin: 2rem 0;
+        border: none;
+        background: $color-dark;
     }
 }
 

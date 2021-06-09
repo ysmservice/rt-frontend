@@ -87,5 +87,107 @@ $(function () {
             };
         });
     };
+
+    if (location.pathname == "/status.html") {
+        $.ajax({
+            url: `${BASE_URL}/status/`,
+            type: "get",
+            dataType: "json"
+        }).done(function (data) {
+            new Chart("chart-ping", {
+                type: "line",
+                data: {
+                    labels: data["labels"],
+                    datasets: [{
+                        label: "Ping (ms)",
+                        data: data["ping"],
+                        borderColor: "#1abc9c",
+                        backgroundColor: "#1abc9c80"
+                    }],
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Ping"
+                        }
+                    }
+                }
+            });
+            new Chart("chart-discord", {
+                type: "line",
+                data: {
+                    labels: data["labels"],
+                    datasets: [{
+                        label: "サーバー数",
+                        data: data["server"],
+                        borderColor: "#2ecc71",
+                        backgroundColor: "#2ecc7180",
+                        yAxisID: "server"
+                    },
+                    {
+                        label: "ユーザー数",
+                        data: data["user"],
+                        borderColor: "#3498db",
+                        backgroundColor: "#3498db80",
+                        yAxisID: "user"
+                    }],
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "サーバー数・ユーザー数"
+                        }
+                    },
+                    scales: {
+                        server: {
+                            type: "linear",
+                            display: true,
+                            position: "left",
+                        },
+                        user: {
+                            type: "linear",
+                            display: true,
+                            position: "right",
+                        }
+                    }
+                }
+            });
+            new Chart("chart-server", {
+                type: "line",
+                data: {
+                    labels: data["labels"],
+                    datasets: [{
+                        label: "メモリ (%)",
+                        data: data["memory"],
+                        borderColor: "#9b59b6",
+                        backgroundColor: "#9b59b680"
+                    },
+                    {
+                        label: "CPU (%)",
+                        data: data["cpu"],
+                        borderColor: "#e91e63",
+                        backgroundColor: "#e91e6380"
+                    },
+                    {
+                        label: "ディスク (%)",
+                        data: data["disk"],
+                        borderColor: "#f1c40f",
+                        backgroundColor: "#f1c40f80"
+
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "メモリ・CPU・ディスク使用率"
+                        }
+                    }
+                }
+            });
+        });
+    };
 });
 
