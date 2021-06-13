@@ -9,10 +9,34 @@
     <meta name="description" content="他にはないような機能を提供している多機能Bot。">
     <meta name="theme-color" content="#6E3DD9">
     <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/dashboard.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <script src="js/dashboard.min.js"></script>
 </head>
 
 <body>
+    <header>
+        <a href="/">
+            <i class="fas fa-undo-alt"></i>
+            <div>RT Webに戻る</div>
+        </a>
+        <div>
+            <img>
+            <div></div>
+        </div>
+    </header>
+    <div class="sidebar">
+        <div class="menu">
+            <div class="title">RT Dashboard</div>
+            <a href="/dashboard.html" data-p="home" class="item">HOME</a>
+            <a href="/dashboard.html?p=server" data-p="server" class="item">Server</a>
+            <a href="/dashboard.html?p=user" data-p="user" class="item">User</a>
+            <a href="/dashboard.html?p=logout" data-p="logout" class="item">Logout</a>
+        </div>
+        <div class="copyright">Copyright © 2020-2021 RT-Team. All Rights Reserved.</div>
+    </div>
+    <div class="main"></div>
 </body>
 
 </html>

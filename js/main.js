@@ -33,8 +33,7 @@ $(function () {
                 $(".news-html").prepend(`<a href="/news.html?p=${n}" class="item"><div>${data[n][0]}</div><div>${data[n][1]}</div></a>`);
             };
         });
-    };
-    if (location.pathname == "/news.html" && "p" in parameters) {
+    } else if (location.pathname == "/news.html" && "p" in parameters) {
         $.ajax({
             url: `${BASE_URL}/news/${parameters["p"]}/`,
             type: "get",
@@ -42,7 +41,7 @@ $(function () {
         }).done(function (data) {
             if (data["status"] != "ok") {
                 $(".news-html").css("text-align", "center")
-                    .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><p><a href="/news.html" class="btn">一覧に戻る</a></p>`);
+                    .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><a href="/news.html" class="btn">一覧に戻る</a>`);
             } else {
                 $(".title").replaceWith(`<div class="title"><h2>ニュース</h2><h1>${data["title"]}</h1><h3>${data["date"]}</h3></div>`);
                 $(".news-html").html(data["content"]);
@@ -51,8 +50,9 @@ $(function () {
     };
 
     // help.html
-    if (location.pathname == "/help.html" && "g" in parameters && !("n" in parameters)) {
-        $(".help-html").html("");
+    if (location.pathname == "/help.html" && !("g" in parameters) && !("c" in parameters)) {
+        $(".help-html").html(`<a href="/help.html?g=bot" class="item">Bot関連</a><a href="/help.html?g=server-tool" class="item">サーバー(ツール)</a><a href="/help.html?g=server-panel" class="item">サーバー(パネル)</a><a href="/help.html?g=server-safety" class="item">サーバー(安全)</a><a href="/help.html?g=server-useful" class="item">サーバー(便利)</a><a href="/help.html?g=individual" class="item">個人</a><a href="/help.html?g=entertainment" class="item">娯楽</a><a href="/help.html?g=chplugin" class="item">チャンネルプラグイン</a><a href="/help.html?g=mybot" class="item">MyBot</a><a href="/help.html?g=other" class="item">その他</a>`);
+    } else if (location.pathname == "/help.html" && "g" in parameters && !("c" in parameters)) {
         $.ajax({
             url: `${BASE_URL}/help/${parameters["g"]}/`,
             type: "get",
@@ -60,29 +60,27 @@ $(function () {
         }).done(function (data) {
             if (data["status"] != "ok") {
                 $(".help-html").css("text-align", "center")
-                    .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><p><a href="/news.html" class="btn">一覧に戻る</a></p>`);
+                    .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><a href="/help.html" class="btn">一覧に戻る</a>`);
             } else {
                 $(".title").replaceWith(`<div class="title"><h2>ヘルプ</h2><h1>${data["title"]}</h1></div>`);
                 delete data["status"];
                 delete data["title"];
                 for (n in data) {
-                    $(".help-html").append(`<a href="/help.html?g=${parameters["g"]}&n=${data[n][0]}" class="item description" data-description="${data[n][1]}">${data[n][0]}</a>`);
+                    $(".help-html").append(`<a href="/help.html?g=${parameters["g"]}&c=${data[n][0]}" class="item description" data-description="${data[n][1]}">${data[n][0]}</a>`);
                 };
             };
         });
-    };
-    if (location.pathname == "/help.html" && "g" in parameters && "n" in parameters) {
-        $(".help-html").html("");
+    } else if (location.pathname == "/help.html" && "g" in parameters && "c" in parameters) {
         $.ajax({
-            url: `${BASE_URL}/help/${parameters["g"]}/${parameters["n"]}/`,
+            url: `${BASE_URL}/help/${parameters["g"]}/${parameters["c"]}/`,
             type: "get",
             dataType: "json"
         }).done(function (data) {
             if (data["status"] != "ok") {
                 $(".help-html").css("text-align", "center")
-                    .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><p><a href="/news.html" class="btn">一覧に戻る</a></p>`);
+                    .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><a href="/help.html" class="btn">一覧に戻る</a>`);
             } else {
-                $(".title").replaceWith(`<div class="title"><h2>ヘルプ > ${data["g-title"]}</h2><h1>${parameters["n"]}</h1></div>`);
+                $(".title").replaceWith(`<div class="title"><h2>ヘルプ > ${data["g-title"]}</h2><h1>${parameters["c"]}</h1></div>`);
                 $(".help-html").html(data["content"]);
             };
         });

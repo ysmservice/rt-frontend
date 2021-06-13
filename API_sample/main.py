@@ -10,7 +10,8 @@ def account():
     return jsonify({
         "status": "ok",
         "login": True,
-        "user_name": "Takkun#1643"
+        "user_name": "Takkun#1643",
+        "icon_url": "https://cdn.discordapp.com/avatars/667319675176091659/e79606c007d306c8b5149bbd336a650f.png"
     })
 
 

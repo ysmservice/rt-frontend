@@ -207,7 +207,7 @@ header {
 .title {
     margin: 0;
     padding: 10rem 10%;
-    background: $color-main;
+    background-color: $color-main;
     color: $color-white;
 }
 
@@ -226,17 +226,19 @@ header {
 
     .btn {
         padding: 1rem 2rem;
-        border: .25rem solid $color-main;
-        border-radius: 1rem;
-        background: $color-main;
+        margin: 1rem .5rem;
+        border: solid $color-main;
+        border-radius: .5rem;
+        display: inline-block;
+        background-color: $color-main;
         color: $color-white;
+        user-select: none;
 
         &:hover {
             background-color: $color-white;
             color: $color-main;
         }
     }
-
 }
 
 .index-html {
@@ -311,7 +313,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: $color-light;
+        background-color: $color-light;
     }
 }
 
@@ -321,7 +323,7 @@ header {
         margin: .5rem 0;
         padding: .5rem 1rem;
         border-left: .25rem solid $color-dark;
-        background: $color-light;
+        background-color: $color-light;
 
         &.description:hover:before {
             content: attr(data-description);
@@ -383,7 +385,7 @@ header {
         height: .25rem;
         margin: 2rem 0;
         border: none;
-        background: $color-dark;
+        background-color: $color-dark;
     }
 }
 

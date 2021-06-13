@@ -213,7 +213,7 @@ header .menu .menu-list .account .dropdown a:hover {
 .title {
   margin: 0;
   padding: 10rem 10%;
-  background: #6E3DD9;
+  background-color: #6E3DD9;
   color: #FFF;
 }
 
@@ -234,10 +234,16 @@ header .menu .menu-list .account .dropdown a:hover {
 
 .content .btn {
   padding: 1rem 2rem;
-  border: 0.25rem solid #6E3DD9;
-  border-radius: 1rem;
-  background: #6E3DD9;
+  margin: 1rem .5rem;
+  border: solid #6E3DD9;
+  border-radius: .5rem;
+  display: inline-block;
+  background-color: #6E3DD9;
   color: #FFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .content .btn:hover {
@@ -336,7 +342,7 @@ header .menu .menu-list .account .dropdown a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #F6F6F6;
+  background-color: #F6F6F6;
 }
 
 .help-html .item {
@@ -344,7 +350,7 @@ header .menu .menu-list .account .dropdown a:hover {
   margin: .5rem 0;
   padding: .5rem 1rem;
   border-left: 0.25rem solid #23272A;
-  background: #F6F6F6;
+  background-color: #F6F6F6;
 }
 
 .help-html .item.description:hover:before {
@@ -408,7 +414,7 @@ header .menu .menu-list .account .dropdown a:hover {
   height: .25rem;
   margin: 2rem 0;
   border: none;
-  background: #23272A;
+  background-color: #23272A;
 }
 
 footer {

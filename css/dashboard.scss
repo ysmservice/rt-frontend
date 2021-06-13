@@ -1,0 +1,142 @@
+$color-main: #6E3DD9;
+$color-sub: #D90DA2;
+$color-white: #FFF;
+$color-light: #F6F6F6;
+$color-dark: #23272A;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: $color-white;
+    color: $color-dark;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+::selection {
+    background-color: $color-main;
+    color: $color-white;
+}
+
+header {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: $color-dark;
+    color: $color-white;
+    user-select: none;
+
+    & > * {
+        height: 100%;
+        padding: 0 1rem;
+        margin: 0 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    & > a {
+        border-bottom: 0 solid;
+        text-decoration: none;
+        color: $color-white;
+        transition: all 300ms 0s ease-in-out;
+
+        &:hover {
+            border-bottom: .5rem solid;
+            background-color: #ffffff40
+        }
+
+        .fas {
+            margin-right: .25rem;
+        }
+    }
+
+    img {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: .25rem;
+    }
+}
+
+.sidebar {
+    height: calc(100% - 2rem);
+    width: 10rem;
+    position: fixed;
+    background-color: $color-dark;
+    color: $color-white;
+    user-select: none;
+
+    .menu {
+        .title {
+            font-size: 1.3rem;
+            margin: .5rem 0;
+            border-bottom: .25rem solid;
+        }
+
+        .item {
+            padding: .5rem 0 .5rem .5rem;
+            border-left: 0 solid;
+            display: block;
+            text-decoration: none;
+            color: $color-white;
+            transition: all 300ms 0s ease-in-out;
+
+            &:hover {
+                border-left: .25rem solid;
+                background-color: #ffffff40;
+                color: $color-white;
+            }
+        }
+
+        .select {
+            border-left: .25rem solid;
+            background-color: $color-white;
+            color: $color-dark;
+        }
+    }
+
+    .copyright {
+        width: 10rem;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        font-size: .75rem;
+    }
+}
+
+.main {
+    margin-left: 10rem;
+    padding: 1rem 5%;
+
+    .btn {
+        padding: 1rem 2rem;
+        margin: 1rem .5rem;
+        border: solid $color-main;
+        border-radius: .5rem;
+        display: inline-block;
+        background-color: $color-main;
+        color: $color-white;
+        text-decoration: none;
+        user-select: none;
+        transition: all 500ms 0s ease-in-out;
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-main;
+        }
+    }
+
+    .btn-dark {
+        border: solid $color-dark;
+        background-color: $color-dark;
+
+        &:hover {
+            color: $color-dark;
+        }
+    }
+}
