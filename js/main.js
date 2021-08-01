@@ -44,7 +44,8 @@ $(function () {
                     .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><a href="/news.html" class="btn">一覧に戻る</a>`);
             } else {
                 $(".title").replaceWith(`<div class="title"><h2>ニュース</h2><h1>${data["title"]}</h1><h3>${data["date"]}</h3></div>`);
-                $(".news-html").html(data["content"]);
+                $(".news-html").html(marked(data["content"]));
+                hljs.highlightAll();
             };
         });
     };
@@ -81,7 +82,8 @@ $(function () {
                     .html(`<h1>404 Not Found.</h1><div>お探しのページが見つかりませんでした。<br>たどったリンクが正しいか確認してください。</div><a href="/help.html" class="btn">一覧に戻る</a>`);
             } else {
                 $(".title").replaceWith(`<div class="title"><h2>ヘルプ > ${data["g-title"]}</h2><h1>${parameters["c"]}</h1></div>`);
-                $(".help-html").html(data["content"]);
+                $(".help-html").html(marked(data["content"]));
+                hljs.highlightAll();
             };
         });
     };

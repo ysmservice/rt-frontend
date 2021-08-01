@@ -406,6 +406,14 @@ header .menu .menu-list .account .dropdown a:hover {
   background-color: #9b59b6;
 }
 
+.credit-html .group.c-4 {
+  background-color: #e91e63;
+}
+
+.credit-html .group.c-5 {
+  background-color: #e74c3c;
+}
+
 .terms-html h1, .terms-html h2 {
   border-bottom: .25rem solid;
 }
