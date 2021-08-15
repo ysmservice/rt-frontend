@@ -1,4 +1,4 @@
-BASE_URL = "http://localhost:5000";
+BASE_URL = "http://tasuren.f5.si:5500";
 
 var parameters = {};
 var parameter_url = location.search.substring(1).split("&");
