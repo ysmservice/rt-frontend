@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ウェブ認証 | RT Discord Bot</title>
+    <meta name="description" content="他にはないような機能を提供している多機能Bot。">
+    <meta name="theme-color" content="#6E3DD9">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs2015.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
+    <script src="js/main.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo">RT Discord Bot</a>
+        <div class="margin"></div>
+        <label class="menu">
+            <input type="checkbox">
+            <div class="menu-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu-list">
+                <a href="/news.html" class="m">ニュース</a>
+                <a href="/help.html" class="m">ヘルプ</a>
+                <a href="https://discord.gg/ugMGw5w" class="m">サポートサーバー</a>
+                <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&scope=bot"
+                    class="m">導入する</a>
+                <a href="/dashboard.html?p=login" class="m login">ログイン</a>
+                <span class="m account">
+                    <a href="/dashboard.html" class="name"></a>
+                    <div class="dropdown">
+                        <a href="/dashboard.html?p=server">サーバー設定</a>
+                        <a href="/dashboard.html?p=user">ユーザー設定</a>
+                        <a href="/dashboard.html?p=logout">ログアウト</a>
+                    </div>
+                </span>
+            </div>
+        </label>
+    </header>
+    <h1 class="title">ウェブ認証結果 / Web Captcha Result</h1>
+    {{ result }}
+    <footer>
+        <div class="menu">
+            <a href="/">
+                <img src="img/icon.png">
+            </a>
+            <div class="menu-list">
+                <div class="item">
+                    <div class="m-title">メイン</div>
+                    <div>
+                        <a href="/news.html">ニュース</a>
+                    </div>
+                    <div>
+                        <a href="/help.html">ヘルプ</a>
+                    </div>
+                    <div>
+                        <a href="/credit.html">クレジット</a>
+                    </div>
+                    <div>
+                        <a href="/terms.html">利用規約</a>
+                    </div>
+                    <div>
+                        <a href="/status.html">ステータス</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="m-title">ヘルプ</div>
+                    <div>
+                        <a href="/help.html?g=bot">Bot関連</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=server-tool">サーバー(ツール)</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=server-panel">サーバー(パネル)</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=server-safety">サーバー(安全)</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=server-useful">サーバー(便利)</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=individual">個人</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=entertainment">娯楽</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=chplugin">チャンネルプラグイン</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=mybot">MyBot</a>
+                    </div>
+                    <div>
+                        <a href="/help.html?g=other">その他</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="m-title">リンク</div>
+                    <div>
+                        <a href="https://discord.gg/ugMGw5w" target="_blank">サポートサーバー</a>
+                    </div>
+                    <div>
+                        <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&scope=bot"
+                            target="_blank">導入URL</a>
+                    </div>
+                    <div>
+                        <a href="https://twitter.com/RT85834744" target="_blank">Twitter</a>
+                    </div>
+                    <div>
+                        <a href="https://github.com/RT-Team" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="m-title">ダッシュボード</div>
+                    <div>
+                        <a href="/dashboard.html">ホーム</a>
+                    </div>
+                    <div>
+                        <a href="/dashboard.html?p=server">サーバー設定</a>
+                    </div>
+                    <div>
+                        <a href="/dashboard.html?p=user">ユーザー設定</a>
+                    </div>
+                    <div>
+                        <a href="/dashboard.html?p=login">ログイン</a>
+                    </div>
+                    <div>
+                        <a href="/dashboard.html?p=logout">ログアウト</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">Copyright © 2020-2021 RT-Team. All Rights Reserved.</div>
+    </footer>
+</body>
+
+</html>
