@@ -60,6 +60,9 @@ header {
         height: 1.5rem;
         width: 1.5rem;
         margin-right: .25rem;
+        background-color: $color-white;
+        border: solid;
+        border-radius: 50%;
     }
 }
 
@@ -137,6 +140,116 @@ header {
 
         &:hover {
             color: $color-dark;
+        }
+    }
+}
+
+.page-main {
+    & > img {
+        height: 10rem;
+        margin: 0 auto;
+        display: block;
+        background-color: $color-dark;
+        border: .25rem solid;
+        border-radius: 50%;
+    }
+
+    .hello {
+        margin-top: -5rem;
+        padding: 5rem 1rem 1rem 1rem;
+        border-radius: 1rem 1rem 0 0;
+        background-color: $color-dark;
+        color: $color-white;
+        text-align: center;
+
+        .logo {
+            margin: 3rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.5;
+            user-select: none;
+
+            img {
+                width: 15rem;
+                margin-right: 1rem;
+            }
+
+            div {
+                font-size: 3.5rem;
+            }
+        }
+    }
+}
+
+.setting {
+    display: grid;
+    grid-template: auto / auto auto auto;
+    grid-template: auto / auto auto auto;
+    grid-gap: 2rem 1rem;
+
+    .update {
+        width: calc(90% - 10rem);
+        margin: 0 5% 0 calc(10rem + 5%);
+        padding: .5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border: none;
+        border-radius: 1rem 1rem 0 0;
+        background-color: $color-dark;
+        color: $color-white;
+    }
+
+    & > * {
+        border-bottom: solid;
+    }
+
+    label {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            margin-right: 1rem;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+.page-server {
+    .server-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        user-select: none;
+    
+        .item {
+            min-width: 10rem;
+            margin: .5rem;
+            padding: .5rem;
+            border: solid;
+            border-radius: .5rem;
+            box-shadow: 0 0 1rem;
+            color: $color-dark;
+            text-decoration: none;
+            text-align: center;
+            transition: 300ms ease-in-out;
+
+            &:hover {
+                border: solid $color-main;
+                box-shadow: 0 0 1rem $color-main;
+            }
+
+            img {
+                height: 10rem;
+            }
         }
     }
 }
