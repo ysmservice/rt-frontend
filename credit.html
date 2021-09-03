@@ -29,7 +29,7 @@
                 <a href="/news.html" class="m">ニュース</a>
                 <a href="/help.html" class="m">ヘルプ</a>
                 <a href="https://discord.gg/ugMGw5w" class="m">サポートサーバー</a>
-                <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&scope=bot"
+                <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&redirect_uri=https%3A%2F%2Frt-bot.com&response_type=code&scope=bot%20applications.commands%20activities.read%20activities.write"
                     class="m">導入する</a>
                 <a href="/dashboard.html?p=login" class="m login">ログイン</a>
                 <span class="m account">
@@ -58,9 +58,12 @@
         <div class="icon">
             <img src="img/arch.svg">
             <div>
-                OS: <a href="https://archlinux.org/" target="_blank">Arch Linux</a> (SnavyさんのVPS!!)<br>
-                言語: <a href="https://www.python.org/" target="_blank">Python</a><br>
-                APIラッパー: <a href="https://discordpy.readthedocs.io/en/stable/" target="_blank">discord.py</a>
+                OS: <a href="https://archlinux.org/" target="_blank">Arch Linux</a> (SnavyさんのVPSです、ありがとうございます！)<br>
+                開発言語: <a href="https://www.python.org/" target="_blank">Python</a><br>
+                <h3>使用したライブラリ</h3>
+                DiscordのAPIラッパーであるPycord含めて<a href="https://github.com/RT-Team/rt-backend/blob/main/requirements.txt">ここ</a>にあるライブラリ全て。<br>
+                そして読み上げにOpenJTalk, AquesTalk 評価版です。<br>
+                OpenJTalkの音源は`rt!voice`で確認ができます。
             </div>
         </div>
         <h1>RTの開発者</h1>
@@ -71,12 +74,13 @@
             <div>
                 <p>
                     <span class="group c-4">サーバー管理者</span>
-                    <span class="group c-1">プログラム班</span>
-                    <span class="group c-2">Web開発班</span>
+                    <span class="group c-1">バックエンド開発</span>
+                    <span class="group c-2">フロントエンド開発</span>
                 </p>
                 僕がRTの開発をし始めた張本人です。<br>
                 現在高校一年生です。<br>
-                自称クソガキッズですがなるべくクソガキッズではないようにしたいと思っています。
+                主にバックエンドを開発しています。<br>
+                <a href="http://tasuren.f5.si" target="_blank">tasurenのウェブサイト</a>
             </div>
         </div>
         <h2>Takkun</h2>
@@ -85,11 +89,12 @@
             <div>
                 <p>
                     <span class="group c-4">サーバー管理者</span>
-                    <span class="group c-1">プログラム班</span>
-                    <span class="group c-2">Web開発班</span>
+                    <span class="group c-1">バックエンド開発</span>
+                    <span class="group c-2">フロントエンド開発</span>
                 </p>
                 このWebサイトをほとんど作りました。<br>
                 RTのプログラムも作ってます！<br>
+                主にフロントエンドを開発しています。<br>
                 ポートフォリオ: <a href="https://takkun053.tk/" target="_blank">https://takkun053.tk/</a> (準備中)
             </div>
         </div>
@@ -99,10 +104,14 @@
             <div>
                 <p>
                     <span class="group c-4">サーバー管理者</span>
-                    <span class="group c-1">プログラム班</span>
+                    <span class="group c-5">バックエンド開発</span>
                 </p>
-                神様(God), RTのためにVPSを買ってくれた人です！まじで感謝！(Thank you)<br>
-                なお日本人ではありません。
+                Hello, my name is Snavy.<br>
+                I am 17 years old and I live in France.<br>
+                I am a self taught Python developer and I want to work in it in the future.<br>
+                I like making Discord Bots, one of the ones I've made has a pretty good success with more than 160 servers using it at this moment.<br>
+                I am happy to join this adventure on RT, and I hope we will have some good fun here !<br>
+                Feel free to ask me for anything I can help with =D
             </div>
         </div>
         <h2>yaakiyu</h2>
@@ -112,9 +121,6 @@
                 <p>
                     <span class="group c-5">モデレーター</span>
                 </p>
-                あんまり開発していない。<br>
-                コードの監査・整理担当。(?)<br>
-                ちょっとしたアドバイスを言うとかしている。
             </div>
         </div>
         <h2>YUTAM＠NY</h2>
@@ -122,9 +128,9 @@
             <img src="img/yutam.png">
             <div>
                 <p>
-                    <span class="group c-3">デザイン班</span>
+                    <span class="group c-3">絵文字デザイン</span>
                 </p>
-                {{ profile }}
+                特になし
             </div>
         </div>
         <h2>餅。</h2>
@@ -132,9 +138,9 @@
             <img src="img/omoti.png">
             <div>
                 <p>
-                    <span class="group c-3">デザイン班</span>
+                    <span class="group c-3">絵文字デザイン</span>
                 </p>
-                {{ profile }}
+                特になし
             </div>
         </div>
     </div>
@@ -201,7 +207,7 @@
                         <a href="https://discord.gg/ugMGw5w" target="_blank">サポートサーバー</a>
                     </div>
                     <div>
-                        <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&scope=bot"
+                        <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&redirect_uri=https%3A%2F%2Frt-bot.com&response_type=code&scope=bot%20applications.commands%20activities.read%20activities.write"
                             target="_blank">導入URL</a>
                     </div>
                     <div>
