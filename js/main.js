@@ -1,4 +1,4 @@
-BASE_URL = "http://localhost";
+BASE_URL = location.protocol+"//"+location.hostname;
 
 
 var parameters = {};
