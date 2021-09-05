@@ -82,7 +82,7 @@ const return_commands = data => {
     return command_list
 }
 
-export function main(api_url, params) {
+export const main = (api_url, params) => {
     $.ajax({
         url: `${api_url}/account/`,
         type: "get",
