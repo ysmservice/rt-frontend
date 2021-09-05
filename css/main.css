@@ -364,6 +364,11 @@ header .menu .menu-list .account .dropdown a:hover {
   border-radius: .5rem;
 }
 
+.description.span {
+  display: inline-block;
+  margin-right : 30px;
+}
+
 .credit-html h1, .credit-html h2 {
   border-bottom: .25rem solid;
 }

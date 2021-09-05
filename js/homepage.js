@@ -20,7 +20,7 @@ export const main = (api_url, params) => {
                     dataType: "json"
                 }).done(data => {
                     delete data.status
-                    for (n in data) {
+                    for (let n in data) {
                         $(".news-html").prepend(
                             `<a href="/news.html?p=${n}" class="item">
                                 <div>${data[n][0]}</div>
@@ -91,9 +91,11 @@ export const main = (api_url, params) => {
                         )
                         delete data.status
                         delete data.title
-                        for (n of data) {
+                        let n;
+                        for (let key in data) {
+                            n = data[key];
                             $(".help-html").append(
-                                `<a href="/help.html?g=${params.get("g")}&c=${n[0]}" class="item description" data-description="${n[1]}">${n[0]}</a>`
+                                `<a href="/help.html?g=${params.get("g")}&c=${n[0]}" class="item description"><span class="description span">${n[0]}</span>${n[1]}</a>`
                             )
                         }
                     }
@@ -113,7 +115,7 @@ export const main = (api_url, params) => {
                     } else {
                         $(".title").replaceWith(
                             `<div class="title">
-                                    <h2>ヘルプ > ${data.g - title}</h2>
+                                    <h2>ヘルプ > ${data.g - data.title}</h2>
                                     <h1>${params.get("c")}</h1>
                                 </div>`
                         )

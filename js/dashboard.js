@@ -1,8 +1,8 @@
 const return_commands = data => {
     var command_list = []
-    for (command_name in data) {
+    for (let command_name in data) {
         var command = data[command_name]
-        for (item_name in command.items) {
+        for (let item_name in command.items) {
             var item = command.items[item_name]
             switch (item.item_type) {
                 case "text":
@@ -40,7 +40,7 @@ const return_commands = data => {
 
                 case "radios":
                     var radio_list = []
-                    for (radio in item.radios) {
+                    for (let radio in item.radios) {
                         radio_list.push(
                             `<input type="radio" name="${command_name}.${item_name}" value="${radio}" ${item.radios[radio] ? "checked" : ""}>
                             ${radio}`
@@ -59,7 +59,7 @@ const return_commands = data => {
                 case "list":
                     var i = 0
                     var option_list = []
-                    for (option in item.list.texts) {
+                    for (let option in item.list.texts) {
                         option_list.push(
                             `<option value="${option}" ${item.list.index == i ? "checked" : ""}>${item.list.texts[option]}</option>`
                         )
@@ -132,7 +132,7 @@ export const main = (api_url, params) => {
                 }).done(data => {
                     if (!params.get("id")) {
                         var server_list = []
-                        for (server in data.settings) {
+                        for (let server in data.settings) {
                             server_list.push(
                                 `<a href="/dashboard.html?p=server&id=${server}" class="item">
                                     <img src="${data.settings[server].icon ? data.settings[server].icon : "img/discord.png"}">
