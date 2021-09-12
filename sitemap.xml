@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://rt-bot.com/</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/news.html</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/dashboard.html?p=login</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/dashboard.html</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/dashboard.html?p=server</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/dashboard.html?p=user</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/dashboard.html?p=logout</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/credit.html</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/terms.html</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/status.html</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=bot</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=server-tool</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=server-panel</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=server-safety</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=server-useful</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=individual</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=entertainment</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=chplugin</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rt-bot.com/help.html?g=other</loc>
+  <lastmod>2021-09-12T03:30:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
