@@ -67,7 +67,7 @@ export const main = (api_url, params) => {
                     <a href="/help.html?g=individual" class="item">個人</a>
                     <a href="/help.html?g=entertainment" class="item">娯楽</a>
                     <a href="/help.html?g=chplugin" class="item">チャンネルプラグイン</a>
-                    <a href="/help.html?g=mybot" class="item">MyBot</a>
+                    <a href="/help.html?g=music" class="item">音楽</a>
                     <a href="/help.html?g=other" class="item">その他</a>`
                 )
             } else if (params.get("g") && !params.get("c")) {
