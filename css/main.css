@@ -208,6 +208,16 @@ header .menu .menu-list .account .dropdown a:hover {
   header .menu .menu-btn {
     display: block;
   }
+
+  .introduce-wrapper {
+    display: inline;
+  }
+  .introduce {
+    vertical-align: top;
+  }
+  .introduce img {
+    display: none;
+  }
 }
 
 .title {
@@ -325,10 +335,6 @@ header .menu .menu-list .account .dropdown a:hover {
   font-size: 1.3rem;
 }
 
-.index-html .introduce {
-  padding: 10rem 0;
-}
-
 .news-html .item {
   margin: .5rem 0;
   padding: .5rem 1rem;
@@ -428,6 +434,31 @@ header .menu .menu-list .account .dropdown a:hover {
   margin: 2rem 0;
   border: none;
   background-color: #23272A;
+}
+
+.index-html .introduce-wrapper {
+  text-align: center;
+}
+
+.index-html .introduce-wrapper-white {
+  background: #FFF;
+}
+
+.index-html .introduce-wrapper-black {
+  background: #eeeeee;
+}
+
+.index-html .introduce {
+  vertical-align: middle;
+  text-align: left;
+  display: inline-block;
+  word-break: break-all;
+  padding: 2rem 2%;
+}
+
+.index-html .introduce img {
+  height: 18vw;
+  width: 18vw;
 }
 
 footer {
