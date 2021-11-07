@@ -35,6 +35,7 @@ export const main = (api_url, params) => {
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     if (data.status != "ok") {
                         $(".news-html").css("text-align", "center").html(
                             `<h1>404 Not Found.</h1>
@@ -49,7 +50,7 @@ export const main = (api_url, params) => {
                                 <h3>${data.date}</h3>
                             </div>`
                         )
-                        $(".news-html").html(marked(data.content))
+                        $(".news-html").html(marked.parse(data.content))
                         hljs.highlightAll()
                     }
                 })
@@ -72,10 +73,11 @@ export const main = (api_url, params) => {
                 )
             } else if (params.get("g") && !params.get("c")) {
                 $.ajax({
-                    url: `${api_url}/help/${params.get("g")}/`,
+                    url: `${api_url}/help/get/${params.get("g")}/`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     if (data.status != "ok") {
                         $(".help-html").css("text-align", "center").html(
                             `<h1>404 Not Found.</h1>
@@ -102,10 +104,11 @@ export const main = (api_url, params) => {
                 })
             } else if (params.get("g") && params.get("c")) {
                 $.ajax({
-                    url: `${api_url}/help/${params.get("g")}/${params.get("c")}/`,
+                    url: `${api_url}/help/get/${params.get("g")}/${params.get("c")}/`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     if (data.status != "ok") {
                         $(".help-html").css("text-align", "center").html(
                             `<h1>404 Not Found.</h1>
@@ -119,7 +122,7 @@ export const main = (api_url, params) => {
                                     <h1>${params.get("c")}</h1>
                                 </div>`
                         )
-                        $(".help-html").html(marked(data.content))
+                        $(".help-html").html(marked.parse(data.content))
                         hljs.highlightAll()
                     }
                 })
