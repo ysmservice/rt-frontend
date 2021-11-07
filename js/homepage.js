@@ -15,10 +15,11 @@ export const main = (api_url, params) => {
         case "/news.html":
             if (!params.get("p")) {
                 $.ajax({
-                    url: `${api_url}/news/`,
+                    url: `${api_url}/news`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     delete data.status
                     for (let n in data) {
                         $(".news-html").prepend(
