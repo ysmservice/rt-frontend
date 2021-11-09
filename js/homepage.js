@@ -49,7 +49,7 @@ export const main = (api_url, params) => {
                                 <h3>${data.date}</h3>
                             </div>`
                         )
-                        $(".news-html").html(marked(data.content))
+                        $(".news-html").html(marked.parse(data.content))
                         hljs.highlightAll()
                     }
                 })
@@ -119,7 +119,7 @@ export const main = (api_url, params) => {
                                     <h1>${params.get("c")}</h1>
                                 </div>`
                         )
-                        $(".help-html").html(marked(data.content))
+                        $(".help-html").html(marked.parse(data.content))
                         hljs.highlightAll()
                     }
                 })
