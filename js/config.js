@@ -1,1 +1,1 @@
-export const api_url = ""
+export const api_url = location.protocol + "//" + location.hostname + "/api"

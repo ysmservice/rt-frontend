@@ -15,10 +15,11 @@ export const main = (api_url, params) => {
         case "/news.html":
             if (!params.get("p")) {
                 $.ajax({
-                    url: `${api_url}/news/`,
+                    url: `${api_url}/news`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     delete data.status
                     for (let n in data) {
                         $(".news-html").prepend(
@@ -35,6 +36,7 @@ export const main = (api_url, params) => {
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     if (data.status != "ok") {
                         $(".news-html").css("text-align", "center").html(
                             `<h1>404 Not Found.</h1>
@@ -72,10 +74,11 @@ export const main = (api_url, params) => {
                 )
             } else if (params.get("g") && !params.get("c")) {
                 $.ajax({
-                    url: `${api_url}/help/${params.get("g")}/`,
+                    url: `${api_url}/help/get/${params.get("g")}/`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     if (data.status != "ok") {
                         $(".help-html").css("text-align", "center").html(
                             `<h1>404 Not Found.</h1>
@@ -102,10 +105,11 @@ export const main = (api_url, params) => {
                 })
             } else if (params.get("g") && params.get("c")) {
                 $.ajax({
-                    url: `${api_url}/help/${params.get("g")}/${params.get("c")}/`,
+                    url: `${api_url}/help/get/${params.get("g")}/${params.get("c")}/`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
+                    data = data.data
                     if (data.status != "ok") {
                         $(".help-html").css("text-align", "center").html(
                             `<h1>404 Not Found.</h1>
