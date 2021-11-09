@@ -4,6 +4,7 @@ export const main = (api_url, params) => {
         type: "get",
         dataType: "json"
     }).done(data => {
+        data = data.data
         if (data.login) {
             $("header .menu .menu-list .login").css("display", "none")
             $("header .menu .menu-list .account .name").text(data.user_name)

@@ -1,3 +1,3 @@
 # rt-frontend
 RTのフロントエンドであるウェブサイトのリポジトリです。  
-ウェブサイト：：https://rt-bot.com
+ウェブサイト：https://rt-bot.com
