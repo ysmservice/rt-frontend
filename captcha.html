@@ -11,7 +11,7 @@
 {% extends "layout.html" %}
 {% block content %}
     <h1 class="title">ウェブ認証 / Web Captcha</h1>
-    <form action="/api/captcha/{{ userdata }}" method="POST">
+    <form action="{{ redirect_url }}?data={{ userdata }}" method="POST">
         <p>ロボットではないことを証明しましょう！</p>
         <div class="h-captcha" data-sitekey="{{ sitekey }}"></div>
         <br />
