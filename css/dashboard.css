@@ -133,7 +133,7 @@ header img {
   padding: 1rem 5%;
 }
 
-.main .btn {
+.main .rtbtn {
   padding: 1rem 2rem;
   margin: 1rem .5rem;
   border: solid #6E3DD9;
@@ -150,17 +150,17 @@ header img {
   transition: all 500ms 0s ease-in-out;
 }
 
-.main .btn:hover {
+.main .rtbtn:hover {
   background-color: #FFF;
   color: #6E3DD9;
 }
 
-.main .btn-dark {
+.main .rtbtn-dark {
   border: solid #23272A;
   background-color: #23272A;
 }
 
-.main .btn-dark:hover {
+.main .rtbtn-dark:hover {
   color: #23272A;
 }
 
@@ -302,4 +302,12 @@ header img {
 
 .page-server .server-list .item img {
   height: 10rem;
+}
+
+
+/* Setting */
+.help {
+  color: #6e3dd9;
+  margin-left: 1.2rem;
+  text-decoration: none;
 }
