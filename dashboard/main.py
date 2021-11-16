@@ -1,6 +1,7 @@
 # RT - Dashboard
 
 from browser import document, alert, html, ajax
+from json import dumps
 
 from dashboard import templates
 
@@ -32,6 +33,7 @@ def on_posted(request):
     data = request.json
     if data["status"] == 200:
         data = data["data"]
+        alert(data)
     else:
         alert(f"エラーが発生しました。：{data['message']}")
 
@@ -42,7 +44,9 @@ def on_post(event):
         "command": event.target.id,
         "kwargs": {},
         "guild_id": guild["id"] if guild else 0,
-        "channel_id": 0
+        "channel_id": 0,
+        "user_id": user["id"],
+        "category": category
     }
     form = document[f"form-{event.target.id}"]
     # チャンネル指定があった場合は取り出しておく。
@@ -74,7 +78,7 @@ def on_post(event):
             data["kwargs"][item.name] = item.value
     # POSTする。
     ajax.post(
-        "/api/settings/update", data=data, oncomplete=on_posted,
+        "/api/settings/update", data=dumps(data), oncomplete=on_posted,
         headers={'Content-Type': 'application/json'}
     )
 
