@@ -1,2 +1,3 @@
-js/brython*
+brython
 .DS_Store
+*.*-workspace

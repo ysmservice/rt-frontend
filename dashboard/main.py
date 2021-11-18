@@ -18,6 +18,7 @@ else:
 def on_load_user(request):
     global user
     user = request.json["data"]
+    alert(user)
     if user["login"]:
         document["user"] <= html.IMG(src=user["icon"])
         document["user"] <= html.DIV(user["user_name"])
@@ -40,6 +41,7 @@ def on_posted(request):
 
 def on_post(event):
     # 更新ボタンのイベントハンドラ
+    global user
     data = {
         "command": event.target.id,
         "kwargs": {},
@@ -53,7 +55,7 @@ def on_post(event):
     try:
         for option in form.select("#require_channel"):
             if option.selected:
-                data["channel_id"] = option.value
+                data["channel_id"] = int(option.value)
                 break
         else:
             data["channel_id"] = 0
