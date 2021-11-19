@@ -18,10 +18,10 @@ else:
 def on_load_user(request):
     global user
     user = request.json["data"]
-    alert(user)
     if user["login"]:
         document["user"] <= html.IMG(src=user["icon"])
         document["user"] <= html.DIV(user["user_name"])
+        user["id"] = int(user["icon"].split("/")[4])
     else:
         alert("ログインをしてください。")
 
@@ -56,6 +56,7 @@ def on_post(event):
         for option in form.select("#require_channel"):
             if option.selected:
                 data["channel_id"] = int(option.value)
+                alert(data["channel_id"])
                 break
         else:
             data["channel_id"] = 0
@@ -143,7 +144,7 @@ def on_load_data(request):
                             )
                         select <= html.OPTION(
                             channel["name"], value=channel["id"], id="require_channel"
-                        )
+                        )                        
                         break
             form <= html.H4("チャンネル") + select
         # 設定項目をつなげる。
