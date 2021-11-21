@@ -1,14 +1,16 @@
 # RT - Dashboard
 
-from browser import document, alert, html, ajax
+from browser import window, document, alert, html, ajax
 from json import dumps
 
-from dashboard import templates
+try:
+    import templates
+except ImportError:
+    pass
 
 
 # ホーム画面じゃない場合はダッシュボードの説明を削除する。
 if "category" in document.query:
-    del document["default"]
     category = document.query["category"]
 else:
     exit()
@@ -30,15 +32,6 @@ ajax.get("/api/account", True, mode="json", oncomplete=on_load_user)
 
 
 # 設定画面本編
-def on_posted(request):
-    data = request.json
-    if data["status"] == 200:
-        data = data["data"]
-        alert(data)
-    else:
-        alert(f"エラーが発生しました。：{data['message']}")
-
-
 def on_post(event):
     # 更新ボタンのイベントハンドラ
     global user
@@ -46,39 +39,54 @@ def on_post(event):
         "command": event.target.id,
         "kwargs": {},
         "guild_id": guild["id"] if guild else 0,
-        "channel_id": 0,
         "user_id": user["id"],
         "category": category
     }
     form = document[f"form-{event.target.id}"]
-    # チャンネル指定があった場合は取り出しておく。
-    try:
-        for option in form.select("#require_channel"):
-            if option.selected:
-                data["channel_id"] = int(option.value)
-                alert(data["channel_id"])
-                break
-        else:
-            data["channel_id"] = 0
-    except KeyError:
-        pass
+
     # 設定項目に設定されている値を取り出す。
     for item in form.select("#item"):
         if isinstance(item, html.OPTION):
             if item.selected:
-                data["kwargs"][item.value] = item.text
+                if "name" in item.attrs:
+                    key, value = item.attrs["name"], int(item.value)
+                else:
+                    key, value = item.value, item.text
         elif item.type == "checkbox":
-            data["kwargs"][item.name] = item.value == "on"
+            key, value = item.name, item.checked
         elif item.type == "number":
             if item.value:
                 try:
-                    data["kwargs"][item.name] = float(item.value)
+                    key, value = item.name, float(item.value)
                 except ValueError:
                     return alert(f"エラー：{item.name}は整数または小数点入りの普通の数である必要があります。")
             else:
-                data["kwargs"][item.name] = 0.0
+                key, value = item.name, 0.0
         else:
-            data["kwargs"][item.name] = item.value
+            key, value = item.name, item.value
+
+        if value or value is False:
+            data["kwargs"][key] = value
+
+    modal_id = event.target.id.replace(" ", "-") + "_modal"
+
+    def on_posted(request):
+        data = request.json
+        if data["status"] == 200:
+            data = data["data"]
+            templates.update_modal(
+                document, modal_id, data
+            )
+        else:
+            templates.update_modal(
+                document, modal_id,
+                f"# エラーが発生しました。\n```\n{data['message']}\n```"
+            )
+
+    # モーダルのローディングをリセットする。
+    templates.show_loading(document, f"loading_{modal_id}", True)
+    document[f"main_{modal_id}"].html = ""
+
     # POSTする。
     ajax.post(
         "/api/settings/update", data=dumps(data), oncomplete=on_posted,
@@ -92,16 +100,9 @@ def get_guild(guild_id):
             return guild
 
 
-def loading(toggle):
-    if toggle:
-        document["main"] <= html.H1("Now loading...", id="loading")
-    else:
-        del document["loading"]
-
-
 def on_load_data(request):
     # 設定項目を組み立てます。
-    loading(False)
+    templates.loading_show(document, "main_loading", False)
     datas = request.json["data"]
     if not datas:
         return alert("設定の項目のリストの取得に失敗しました。\nFailed to get settings data.")
@@ -112,64 +113,74 @@ def on_load_data(request):
         guild = 0
 
     # 入力フォームを組み立てる。
-    for name, data in list(datas.items()):
+    container = html.DIV(Class="container")
+    count = 0
+    row = html.DIV(Class="row g-4")
+    for name, data in sorted(datas.items(), key=lambda x: x[0]):
+        count += 1
+
         headding = data.get("headding", {})
         if headding is None:
             headding = {}
-        document["main"] <= templates.get_help(
-            data["display_name"], data["help"], headding.get(
-                user["language"], headding.get("ja", "...")
-            )
-        )
 
         form = html.FORM(id=f"form-{name}")
-        # 別途チャンネル指定が必要な場合はチャンネルセレクターを作る。
-        if data["require_channel"]:
-            select = html.SELECT(Class="form-select")
-            before = False
 
-            # ここですごい遠回りなsortedしてるけどそうしないとBrythonでバグが発生する。
-            # だから気色悪くても気にしないでね。
-            channels = sorted(
-                f"{int(channel['voice'])}{channel['name']}-{channel['id']}"
-                for channel in guild["channels"]
-            )
-            for tentative in channels:
-                for channel in guild["channels"]:
-                    if tentative.endswith(str(channel["id"])):
-                        if channel["voice"] is not before:
-                            before = True
-                            select <= html.OPTION(
-                                f"ーーーここからボイスチャンネル"
-                            )
-                        select <= html.OPTION(
-                            channel["name"], value=channel["id"], id="require_channel"
-                        )                        
-                        break
-            form <= html.H4("チャンネル") + select
         # 設定項目をつなげる。
         for key, (type_, default, big) in data["kwargs"].items():
-            form <= templates.get_form(key, type_, default, big)
-        button = html.A("OK", Class="rtbtn", id=name)
+            form <= templates.get_form(key, type_, default, big, guild)
+        modal_id = name.replace(" ", "-") + "_modal"
+        button = html.A(
+            "OK", Class="btn", id=name, **{
+                "data-bs-toggle": "modal", "data-bs-target": f"#{modal_id}",
+                "aria-hidden": "false"
+            }
+        )
         button.bind("click", on_post)
-        form <= button + html.BR()
-        document["main"] <= form
+        form <= (
+            html.BR() + button + templates.modal(
+                modal_id, data["display_name"]
+            ) + html.BR()
+        )
 
-        document["main"] <= html.BR()
+        row <= html.DIV(
+            html.DIV(
+                html.DIV(
+                    html.STRONG(html.FONT(
+                        html.A(
+                            html.I(
+                                Class="bi bi-question-square-fill"
+                            ), Class="help", href=data["help"], target="_blank"
+                        ) + " " + data["display_name"], size=5.5
+                    )),
+                    Class="card-header"
+                ) + html.DIV(
+                    headding.get(
+                        user["language"], headding.get("ja", "...")
+                    ) + html.BR() + form,
+                    Class="card-body"
+                ),
+                Class="card"
+            ),
+            Class="col-4"
+        )
+
+    container <= row
+    document["main"] <= container
 
 
 def on_recieved_guild(request):
+    # サーバー情報を取得したら変数に入れる。
     global guilds
     guilds = request.json["data"]
-loading(True)
 ajax.get(f"/api/settings/guilds", blocking=True, oncomplete=on_recieved_guild)
 
 
+# サーバー情報を取得するかサーバー選択にするかです。
 if category != "guild" or (category == "guild" and "guild_id" in document.query):
     ajax.get(f"/api/settings/commands/get/{category}", oncomplete=on_load_data)
 elif category == "guild":
     # サーバーが選択されていないのならサーバー選択画面にする。
-    loading(False)
+    templates.loading_show(document, "main_loading", False)
     document["main"] <= html.H1("サーバー選択") + "設定を行いたいサーバーを選択してください。" \
         + html.BR() + html.BR()
     before = ""
@@ -180,7 +191,8 @@ elif category == "guild":
             document["main"] <= html.UL(id=f"guilds-{before}")
         document[f"guilds-{before}"] <= html.LI(
             html.A(
-                guild['name'], href=f"/dashboard?category=guild&guild_id={guild['id']}",
+                guild['name'],
+                href=f"{window.location.pathname}?category={category}&guild_id={guild['id']}",
                 style={"font-size": "23px"}
             )
         )
