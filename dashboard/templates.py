@@ -1,6 +1,6 @@
 # RT.Dashboard - Templates
 
-from browser import html, markdown
+from browser import html, window
 
 
 def _wrap_input(*args, default_input=html.INPUT, **kwargs):
@@ -81,7 +81,6 @@ def get_loading(**kwargs):
 
 def show_loading(document, id_, onoff):
     if onoff:
-        print(document[id_].attrs)
         if "hidden" in document[id_].attrs:
             del document[id_].attrs["hidden"]
     else:
@@ -119,10 +118,7 @@ def update_modal(document, id_, description, mark=True):
     if mark:
         new = ""
         for line in description.splitlines():
-            new += f"{line}{'' if line.startswith(('#', '* ')) else '  '}"
-        mk, scripts = markdown.mark(description)
-        document[f"main_{id_}"].html = mk
-        for script in scripts:
-            exec(script, globals())
+            new += f"{line}{'' if line.startswith(('#', '* ')) else '  '}\n"
+        document[f"main_{id_}"].html = window.marked.parse(new)
     else:
         document[f"main_{id_}"].html = description

@@ -1,7 +1,7 @@
 # RT - Dashboard
 
 from browser import window, document, alert, html, ajax
-from json import dumps
+from json import dumps, loads
 
 try:
     import templates
@@ -123,7 +123,7 @@ def on_load_data(request):
         if headding is None:
             headding = {}
 
-        form = html.FORM(id=f"form-{name}")
+        form = html.DIV(id=f"form-{name}")
 
         # 設定項目をつなげる。
         for key, (type_, default, big) in data["kwargs"].items():
