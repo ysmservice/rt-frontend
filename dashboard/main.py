@@ -47,11 +47,13 @@ def on_post(event):
     # 設定項目に設定されている値を取り出す。
     for item in form.select("#item"):
         if isinstance(item, html.OPTION):
-            if item.selected:
+            if item.selected and item.value:
                 if "name" in item.attrs:
                     key, value = item.attrs["name"], int(item.value)
                 else:
                     key, value = item.value, item.text
+            else:
+                value = None
         elif item.type == "checkbox":
             key, value = item.name, item.checked
         elif item.type == "number":
@@ -116,7 +118,7 @@ def on_load_data(request):
     container = html.DIV(Class="container")
     count = 0
     row = html.DIV(Class="row g-4")
-    for name, data in sorted(datas.items(), key=lambda x: x[0]):
+    for name, data in sorted(datas.items(), key=lambda x: x[1]["display_name"]):
         count += 1
 
         headding = data.get("headding", {})
@@ -162,7 +164,7 @@ def on_load_data(request):
                 ),
                 Class="card"
             ),
-            Class="col-4"
+            Class="col-sm-4"
         )
 
     container <= row

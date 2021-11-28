@@ -10,6 +10,11 @@ def _wrap_input(*args, default_input=html.INPUT, **kwargs):
     return default_input(*args, **kwargs)
 
 
+NULL_OPTION = [
+    _wrap_input("未選択", value="", default_input=html.OPTION)
+]
+
+
 def _get_form(name, type_, default, big, guild):
     if isinstance(type_, list):
         if type_[0] == "Literal":
@@ -18,7 +23,7 @@ def _get_form(name, type_, default, big, guild):
                 (_wrap_input(
                     word, value=name, default_input=html.OPTION,
                     **({"selected": "selected"} if default == word else {})
-                ) for word in type_[1:]),
+                ) for word in NULL_OPTION + type_[1:]),
                 Class="form-select"
             )
         elif type_[0] == "Union":
@@ -51,7 +56,7 @@ def _get_form(name, type_, default, big, guild):
                 (_wrap_input(
                     data["name"], value=str(data["id"]), name=name,
                     default_input=html.OPTION
-                ) for data in sorted(
+                ) for data in [{"name": "未選択", "id": ""}] + sorted(
                     guild[f"{type_.lower()}s"], key=(
                         (lambda x: ('VC: ' if x["voice"] else 'TC: ') + x["name"])
                         if type_ == "Channel" else lambda x: x["name"]
@@ -65,7 +70,9 @@ def _get_form(name, type_, default, big, guild):
 
 
 def get_form(name, type_, default, big, guild):
-    return html.H4(name) + _get_form(name, type_, default, big, guild) + html.BR()
+    return html.H4(name) + html.DIV(
+        _get_form(name, type_, default, big, guild)
+    ) + html.BR()
 
 
 def get_loading(**kwargs):
