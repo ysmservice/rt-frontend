@@ -146,17 +146,18 @@ def on_load_data(request):
             html.DIV(
                 html.DIV(
                     html.STRONG(html.FONT(
-                        html.A(
+                        ((html.A(
                             html.I(
                                 Class="bi bi-question-square-fill"
                             ), Class="help", href=data["help"], target="_blank"
-                        ) + " " + data["display_name"], size=5.5
+                        ) + " ") if data["help"] else "")
+                        + data["display_name"], size=5.5
                     )),
                     Class="card-header"
                 ) + html.DIV(
                     headding.get(
                         user["language"], headding.get("ja", "...")
-                    ) + html.BR() + form,
+                    ) + html.BR() + html.BR() + form,
                     Class="card-body"
                 ),
                 Class="card"
