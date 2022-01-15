@@ -9,10 +9,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{escape(data.get('url', ''))}" />
     <meta property="og:image" content="{escape(data.get('image', ''))}" />
-    <meta property="og:description" content="{escape(data.get('description', ''))}" />
+    <meta property="og:description" content="iwbtg" />
     <meta name="theme-color" content="#{data.get('color', '6600ff')}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  """ ^^
+  """.replace("iwbtg", escape(data.get("description", "")).replace("\n", "  ")) ^^
 <body>
     こんにちは！<br>
     みんな僕を探してるらしいよ！<br>
