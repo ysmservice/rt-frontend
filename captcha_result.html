@@ -1,16 +1,15 @@
-{% include "layout_head.html" %}
-{% block head %}
-    <title>Captcha Result | RT Discord Bot</title>
-    <meta name="description" content="これで済むDiscordBotのRTのウェブ認証結果ページです。">
+^^ self.layout(
+    "Captcha Result | RT Discord Bot", "これで済むDiscordBotのRTのウェブ認証結果ページです。",
+    """
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js" type="module"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs2015.min.css">
-{% endblock %}
-{% extends "layout.html" %}
-{% block content %}
+    """, """
     <div style="font-size: 30px; padding: 10%;">
         <h1>ウェブ認証結果 / Web Captcha Result</h1>
         {{ result }}<br>
         <code>{{ code }}</code>
     </div>
-{% endblock %}
+    <br><br><br><br>
+    """
+) ^^

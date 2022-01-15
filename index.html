@@ -1,12 +1,8 @@
-{% include "layout_head.html" %}
-{% block head %}
-    <title>HOME | RT Discord Bot</title>
-    <meta name="description" content="他にはないような機能を提供している多機能Bot。">
-    <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/main.js" type="module"></script>
-{% endblock %}
-{% extends "layout.html" %}
-{% block content %}
+^^
+manager
+self.layout(
+    "HOME | RT Discord Bot", "他にはないような機能を提供している多機能Bot。",
+    """
     <div class="index-html">
         <div class="top">
             <div>
@@ -128,4 +124,8 @@
             <a href="https://app.dissoku.net/api/bots/716496407212589087/invite/" class="btn">RTを導入する</a>
         </div>
     </div>
-{% endblock %}
+    """, """
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/main.js" type="module"></script>
+    """
+) ^^
