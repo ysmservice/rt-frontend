@@ -12,10 +12,8 @@
     <meta property="og:description" content="iwbtg" />
     <meta name="theme-color" content="#{data.get('color', '6600ff')}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  """.replace("iwbtg", escape(data.get("description", "")).replace("\n", "  ")) ^^
+  """.replace("iwbtg", "".join(escape, data.get("description", "").split())) ^^
 <body>
-    こんにちは！<br>
-    みんな僕を探してるらしいよ！<br>
-    またどこかであうといいね。
+  動かない、ただの屍のようだ。
 </body>
 </html>
