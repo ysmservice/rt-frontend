@@ -1,43 +1,71 @@
-^^ self.layout(
+^^ COPYRIGHTS = (
+    ("https://github.com/nextcord/nextcord/blob/master/LICENSE", "nextcord",
+    "Copyright (c) 2015-present Rapptz, Copyright (c) 2021-present tag-epic"),
+    ("https://github.com/ultrajson/ultrajson/blob/main/LICENSE.txt", "UltraJSON",
+    "Copyright (c) 2014, Electronic Arts Inc."),
+    ("https://github.com/aio-libs/aiomysql/blob/master/LICENSE", "aiomysql",
+        "Copyright (c) 2010, 2013 PyMySQL contributors"),
+    ("https://github.com/Tinche/aiofiles/blob/master/LICENSE", "aiofiles",
+        ""),
+    ("https://github.com/Gorialis/jishaku/blob/master/LICENSE", "jishaku",
+        "Copyright (c) 2021 Devon (Gorialis) R"),
+    ("https://github.com/tasuren/reprypt/blob/main/LICENSE", "reprypt",
+        "Copyright (c) 2021 tasuren")
+)
+credit = lambda copyrights: "".join(
+    f'<li><a href="{url}">{name}</a>{f" - <code>{copyright}</code></li>" if copyright else ""}'
+    for url, name, copyright in copyrights
+)
+
+self.layout(
     "Credit | RT Discord Bot", "他にはないような機能を提供している多機能BotであるRTのクレジットです。",
     """
     <h1 class="title">クレジット</h1>
     <div class="content credit-html">
-        <h1>RTのアイコン</h1>
+        <h1>アイコン</h1>
         <div class="icon">
             <img src="img/icon.png">
             <div>
                 作成者: Takkun<br>
-                ライセンス: <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode.ja" target="_blank">CC BY-ND
-                    4.0</a>
+                ライセンス: <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode.ja" target="_blank">CC BY-ND 4.0</a>
             </div>
         </div>
-        <h1>RTの環境</h1>
+        <h1>動作環境等</h1>
+        <h2>バックエンド</h2>
         <div class="icon">
             <img src="img/arch.svg">
             <div>
                 OS: <a href="https://archlinux.org/" target="_blank">Arch Linux</a> (SnavyさんのVPSです、ありがとうございます！)<br>
                 開発言語: <a href="https://www.python.org/" target="_blank">Python</a><br>
-                <h3>使用したライブラリ</h3>
-                DiscordのAPIラッパーであるPycord含めて<a href="https://github.com/RT-Team/rt-backend/blob/main/requirements.txt">ここ</a>にあるライブラリ全て。<br>
-                そして読み上げにOpenJTalk, AquesTalk 評価版です。<br>
-                OpenJTalkの音源は`rt!voice`で確認ができます。
             </div>
         </div>
+        <h3>使用しているライブラリ</h3>
+        <ul>{}</ul>
+        <h2>Bot</h2>
+        <div class="icon">
+            <img src="/img/ubuntu.png">
+            <div>
+                OS: Ubuntu Server<br>
+                開発言語: Python
+            </div>
+        </div>
+        <h3>使用しているライブラリ</h3>
+        <ul>{}</ul>
+        <h3>その他</h3>
+        読み上げにはOpenJTalk, AquesTalk 評価版の二つを使用しています。<br>
+        OpenJTalkの音源は<code>rt!voice</code>で確認ができます。
         <h1>RTの開発者</h1>
-        <!-- 紹介文を書き換える -->
         <h2>tasuren</h2>
         <div class="icon">
             <img src="img/tasuren.png">
             <div>
                 <p>
-                    <span class="group c-4">サーバー管理者</span>
+                    <span class="group c-4">Bot開発</span>
                     <span class="group c-1">バックエンド開発</span>
                     <span class="group c-2">フロントエンド開発</span>
                 </p>
-                僕がRTの開発をし始めた張本人です。<br>
-                現在高校一年生です。<br>
-                主にバックエンドを開発しています。<br>
+                僕がRTの開発をし始めた張本人で高校生です。<br>
+                主にBot/バックエンドを開発しています。<br>
                 <a href="http://tasuren.f5.si" target="_blank">tasurenのウェブサイト</a>
             </div>
         </div>
@@ -46,7 +74,7 @@
             <img src="img/takkun.png">
             <div>
                 <p>
-                    <span class="group c-4">サーバー管理者</span>
+                    <span class="group c-4">Bot開発</span>
                     <span class="group c-1">バックエンド開発</span>
                     <span class="group c-2">フロントエンド開発</span>
                 </p>
@@ -61,8 +89,8 @@
             <img src="img/snavy.png">
             <div>
                 <p>
-                    <span class="group c-4">サーバー管理者</span>
-                    <span class="group c-5">バックエンド開発</span>
+                    <span class="group c-4">サーバー提供者</span>
+                    <span class="group c-1">バックエンド開発</span>
                 </p>
                 Hey 👋 I'm a backend developer looking to learn new stuff
             </div>
@@ -81,7 +109,7 @@
             <img src="img/yutam.png">
             <div>
                 <p>
-                    <span class="group c-3">絵文字デザイン</span>
+                    <span class="group c-3">デザイナー</span>
                 </p>
                 特になし
             </div>
@@ -91,13 +119,52 @@
             <img src="img/omoti.png">
             <div>
                 <p>
-                    <span class="group c-3">絵文字デザイン</span>
+                    <span class="group c-3">デザイナー</span>
                 </p>
                 特になし
             </div>
         </div>
     </div>
-    """, """
+    """.format(
+        credit(
+            (
+                ("https://github.com/sanic-org/sanic/blob/main/LICENSE", "Sanic",
+                    "Copyright (c) 2016-present Sanic Community"),
+            ) + COPYRIGHTS + (
+                ("https://github.com/tasuren/miko/blob/main/LICENSE", "miko-tpl",
+                    "Copyright (c) 2022 tasuren"),
+            )
+        ),
+        credit(
+            COPYRIGHTS + (
+                ("https://github.com/stub42/pytz/blob/master/LICENSE.txt", "pytz",
+                    escape("Copyright (c) 2003-2019 Stuart Bishop <stuart@stuartbishop.net>")),
+                ("https://github.com/python-pillow/Pillow/blob/main/LICENSE", "Pillow",
+                    "Copyright © 1997-2011 by Secret Labs AB, Copyright © 1995-2011 by Fredrik Lundh, Copyright © 2010-2022 by Alex Clark and contributors"),
+                ("https://github.com/ytdl-org/youtube-dl", "youtube_dl", ""),
+                ("https://github.com/tasuren/niconico_dl/blob/main/LICENSE", "niconico_dl",
+                    "Copyright (c) 2020 tasuren"),
+                ("https://www.crummy.com/software/BeautifulSoup/", "BeautifulSoup 4",
+                    "Copyright (c) 2004 Leonard Richardson"),
+                ("https://github.com/carpedm20/emoji/blob/master/LICENSE.txt", "emoji",
+                    "Copyright (c) 2014-2021, Taehoon Kim, Kevin Wurster and Tahir Jalilov"),
+                ("https://github.com/jiaaro/pydub/blob/master/LICENSE", "pydub",
+                    "Copyright (c) 2011 James Robert, http://jiaaro.com"),
+                ("https://github.com/giampaolo/psutil/blob/master/LICENSE", "psutil",
+                    "Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola'"),
+                ("https://github.com/pyca/pynacl/blob/main/LICENSE", "PyNacl", ""),
+                ("https://github.com/lepture/captcha/blob/master/LICENSE", "captcha",
+                    "Copyright (c) 2014, Hsiaoming Yang"),
+                ("https://deep-translator.readthedocs.io/en/latest/README.html#license", "deep-translator",
+                    "Copyright (c) 2020-present, Nidhal Baccouri"),
+                ("https://github.com/top-gg/python-sdk/blob/master/LICENSE", "topggpy",
+                    "Copyright 2021 Assanali Mukhanov & Top.gg"),
+                ("https://github.com/tweepy/tweepy/blob/master/LICENSE", "tweepy",
+                    "Copyright (c) 2009-2022 Joshua Roesslein"),
+                ("https://github.com/sivel/speedtest-cli/blob/master/LICENSE", "speedtest-cli", "")
+            )
+        )
+    ), """
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js" type="module"></script>
     """
