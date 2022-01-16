@@ -12,7 +12,7 @@
     <meta property="og:description" content="iwbtg" />
     <meta name="theme-color" content="#{data.get('color', '6600ff')}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  """.replace("iwbtg", "".join(map(escape, data.get("description", "").split()))) ^^
+  """.replace("iwbtg", " ".join(map(escape, data.get("description", "").split()))) ^^
 <body>
   動かない、ただの屍のようだ。
 </body>
