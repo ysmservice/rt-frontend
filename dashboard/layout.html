@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ダッシュボード | RT Discord Bot</title>
-    <meta name="description" content="他にはないような機能を提供している多機能Bot。">
+    <meta name="description" content="他にはないような機能を提供している多機能Botのダッシュボードです。">
     <meta name="theme-color" content="#6E3DD9">
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/dashboard.css">
@@ -14,16 +14,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="/brython/brython.js" ></script>
-    <script src="/brython/brython_stdlib.js"></script>
+    <script src="/dashboard/dashboard.js" type="module"></script>
 </head>
 
-<body onload="brython()">
-    <script type="text/python" src="/dashboard/main.py"></script>
+<body>
     <header>
         <a href="/">
             <i class="fas fa-undo-alt"></i>
-            <div>RT Webに戻る</div>
+            <div>ホームに戻る</div>
         </a>
         <div id="user">
         </div>
@@ -32,16 +30,19 @@
         <div class="menu">
             <div class="title">RT Dashboard</div>
             <a href="/dashboard" data-p="home" class="item">HOME</a>
-            <a href="/dashboard/guild.html?category=guild" data-p="guild" class="item">Server</a>
-            <a href="/dashboard/user.html" data-p="user" class="item">User</a>
-            <a href="/dashboard/tools.html?category=Tools" data-p="Tools" class="item">Tools</a>
+            <a href="/dashboard/setting.html" data-p="" class="item">Setting</a>
             <a href="/api/account/logout" data-p="logout" class="item">Logout</a>
         </div>
-        <div class="copyright">Copyright © 2020-2021 RT-Team. All Rights Reserved.</div>
+        <div class="copyright">Copyright (c) 2022 RT-Team</div>
     </div>
-    <div class="main" id="main">
-        {% block content %}
-        {% endblock %}
+    <div class="main">
+        <br><br>
+        ^^ content ^^
+        <hr>
+        <div id="main"></div>
+        <input type="text" id="search" class="form-control" placeholder="検索バー" hidden="true"><br>
+        <div class="accordion" id="commands" hidden="true"></div>
+        <div class="sk-cube-grid" id="main-loading"><div class="sk-cube sk-cube1"></div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div><div class="sk-cube sk-cube4"></div><div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div><div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8"></div><div class="sk-cube sk-cube9"></div></div>
     </div>
 </body>
 
