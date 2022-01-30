@@ -29,7 +29,7 @@
     <div class="sidebar">
         <div class="menu">
             <div class="title">RT Dashboard</div>
-            <a href="/dashboard" data-p="home" class="item">HOME</a>
+            <a href="/dashboard" data-p="home" class="item">Home</a>
             <a href="/dashboard/setting.html" data-p="" class="item">Setting</a>
             <a href="/api/account/logout" data-p="logout" class="item">Logout</a>
         </div>
@@ -40,9 +40,30 @@
         ^^ content ^^
         <hr>
         <div id="main"></div>
+        <div class="row align-items-center" id="selectors">
+        </div>
         <input type="text" id="search" class="form-control" placeholder="検索バー" hidden="true"><br>
         <div class="accordion" id="commands" hidden="true"></div>
+        <!-- コマンド等の取得中時に表示するローディング -->
         <div class="sk-cube-grid" id="main-loading"><div class="sk-cube sk-cube1"></div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div><div class="sk-cube sk-cube4"></div><div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div><div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8"></div><div class="sk-cube sk-cube9"></div></div>
+        <!-- 実行時の結果表示用のモーダル -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">コマンドの実行</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="modal-content"></div>
+                  <div class="sk-cube-grid" id="modal-loading"><div class="sk-cube sk-cube1"></div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div><div class="sk-cube sk-cube4"></div><div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div><div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8"></div><div class="sk-cube sk-cube9"></div></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 </body>
 

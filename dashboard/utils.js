@@ -18,10 +18,11 @@ export function checkResponse(response) {
         return true;
     else if (response.status == 403)
         requireLogin();
-    else if (response.status == 503)
-        alert("まだRTは準備中です。\nもうちょっと待ってね。");
-    else
-        alert("データの取得に失敗しました。");
+    else if (response.status == 503) {
+        alert("りつちゃんは今お着替えか食事か通勤中です。(要するに準備中です。)\nもうちょっと待ってね。");
+        window.location = "/dashboard";
+    } else
+        alert("りつちゃん今風邪をひいているみたいです。\nすみませんが、今はここは使えません。");
     return false;
 }
 
@@ -59,7 +60,7 @@ export function sort(keys, data, value=true) {
 /**
  * selectを使ったセレクトメニューを作成します。
  */
-export function makeSelect(list, func, message, id) {
+export function makeSelect(list, func, message, id, class_=null) {
     let div = document.createElement("div");
     div.setAttribute("id", `${id}-menu`);
     let select = document.createElement("select");
@@ -82,6 +83,7 @@ export function makeSelect(list, func, message, id) {
     });
 
     select.setAttribute("id", id);
+    if (!(class_ === null)) div.classList.add(class_);
     div.appendChild(select);
     return div;
 };
@@ -111,4 +113,31 @@ export function get(data, key, defaultValue) {
  */
 export function getText(data, user) {
     return get(data, user.language, data.ja);
+};
+
+
+/**
+ * ロール等の辞書からオプションのリストを作る。
+ */
+export function createOptions(data) {
+    let options = [], option;
+    Object.keys(data).map(key => {
+        option = document.createElement("option");
+        option.value = key;
+        option.innerText = data[key];
+        options.push(option);
+    });
+    return options;
+};
+
+
+const ERRORS = (
+    "りつちゃんがこけちゃった！", "りつちゃんがうとうとして集中できなかった！", "りつちゃんがかっこいい人見てたら返信ができなかった！",
+    "りつちゃんがコーヒーをこぼしちゃった！", "りつちゃんはリクエストをしました。\nだが、ぴろゆきに絡まれて敗北！"
+);
+/**
+ * エラーメッセージを選びます。
+ */
+export function getErrorMessage() {
+    return ERRORS[Math.floor(Math.random() * ERRORS.length)];
 };

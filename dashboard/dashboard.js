@@ -5,8 +5,8 @@ import { checkResponse } from './utils.js';
 
 // 各JavaScriptを実行する。
 window.onload = function() {
-    let user, request = new Request("/api/account", {method: "GET"});
-    fetch(request)
+    let user;
+    fetch(new Request("/api/account", {method: "GET"}))
         .then(response => {
             if (checkResponse(response)) {
                 return response.json();
@@ -24,8 +24,6 @@ window.onload = function() {
                 import("/dashboard/setting.js").then(module => {
                     module.main_function(user);
                 });
-            } else {
-                document.getElementById("main-loading").hidden = true;
-            };
+            } else document.getElementById("main-loading").hidden = true;
         });
 };
