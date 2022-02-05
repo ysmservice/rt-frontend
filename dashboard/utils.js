@@ -6,7 +6,7 @@
  */
 function requireLogin() {
     alert("ログインをしてください。");
-    window.location = "https://rt-bot.com/api/account/login";
+    window.location = "../api/account/login";
 };
 
 
