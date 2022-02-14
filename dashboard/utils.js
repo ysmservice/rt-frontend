@@ -2,11 +2,11 @@
 
 
 /**
- * ログインが必要と表示してからホーム画面にリダイレクトさせます。
+ * ログインが必要と表示してからログイン画面にリダイレクトさせます。
  */
 function requireLogin() {
     alert("ログインをしてください。");
-    window.location = "/";
+    window.location = "../api/account/login";
 };
 
 
@@ -19,10 +19,10 @@ export function checkResponse(response) {
     else if (response.status == 403)
         requireLogin();
     else if (response.status == 503) {
-        alert("りつちゃんは今お着替えか食事か通勤中です。(要するに準備中です。)\nもうちょっと待ってね。");
+        alert("りつちゃんは起きたばっかりで寝ぼけてます。(要するに準備中です。)\nもうちょっと待ってね。");
         window.location = "/dashboard";
     } else
-        alert("りつちゃん今風邪をひいているみたいです。\nすみませんが、今はここは使えません。");
+        alert("りつちゃんは今風邪をひいているみたいです。\nすみませんが、今はここは使えません。");
     return false;
 }
 
