@@ -1,17 +1,31 @@
-^^ self.layout(
-    "HOME | RT Discord Bot", "他にはないような機能を提供している多機能Bot。",
+^^
+ol = lambda datas: \
+    f'<ol>{"".join(f"<li>{_(ja=ja, en=en)}</li>" for ja, en in datas)}</ol>'
+
+self.layout(
+    "Home | RT Discord Bot", "他にはないような機能を提供している多機能Bot。",
     """
     <div class="index-html">
         <div class="top">
             <div>
                 <h1>RT Discord Bot</h1>
-                <p>このBotだけで管理が済むとにかく多機能な次世代Bot</p>
+                <p>^^ _(
+                  ja="このBotだけで管理が済むとにかく多機能な次世代Bot",
+                  en="Convenient, feature-rich, modern Bot"
+                ) ^^</p>
             </div>
         </div>
         <div class="content">
-            <h1>RT Discord Bot とは</h1>
+            <h1>About</h1>
+            ^^ _(
+              ja="""
             RTはDiscordのとあるBotでとにかく多機能でこのBotだけでサーバー管理が済んでしまうという次世代Botです。<br>
             強いて言えば読み上げと音楽プレイヤーがありサブのRTもあるので、もしかしたら音楽Botそして読み上げBotもRTに置き換えられますね。
+              """, en="""
+              RT is a Discord Bot that can do everything most Bots can.<br>
+              You will only need this Bot to manage the server.
+              """
+            ) ^^
         </div>
         <hr>
         <div class="introduce-wrapper">
@@ -20,28 +34,32 @@
                     <img src="/img/introduce/tool.png">
                 </div>
                 <div class="introduce">
-                    <h2>豊富なサーバー管理に使えるツールなどの機能</h2>
-                    以下のようなサーバーツールがあります。
-                    <ol>
-                        <li>役職, 投票, 募集, チケット パネル</li>
-                        <li>カスタム可能なチャンネルステータス</li>
-                        <li>チャンネルのロック/アンロック</li>
-                        <li>スレッドマネージャー (スレッド自動アーカイブ防止など)</li>
-                        <li>自己紹介テンプレートに使えるいつも下にくる強制ピン留め</li>
-                        <li>他にも便利なツールがあります。</li>
-                        <li>フィールドも設定が可能な埋め込み作成コマンド</li>
-                        <li>特定のロールが付与/剥奪された際に他を付与/剥奪する機能</li>
-                        <li>自動返信</li>
-                        <li>ボイスチャンネルに入ったら付与されるロール</li>
-                        <li>その他もろもろ</li>
-                    </ol>
+                    <h2>^^ _(
+                      ja="豊富なサーバー管理に使えるツールなどの機能",
+                      en="Tools and server management tools"
+                    ) ^^</h2>
+                    ^^ _(ja="以下のようなサーバーツールがあります。", en="The tools are:") ^^
+                    ^^ ol((
+                      ("役職, 投票, 募集, チケット パネル", "Role, vote, recruitment, ticket panel"),
+                      ("カスタム可能なチャンネルステータス", "Customizable channel status"),
+                      ("チャンネルのロック/アンロック", "Lock/Unlock channel"),
+                      ("スレッドマネージャー (スレッド自動アーカイブ防止など)", "Thread manager (e.g. archive stopper)"),
+                      ("自己紹介テンプレートに使えるいつも下にくる強制ピン留め", "A forced pinning feature that creates a message that always comes to the bottom, is useful for self-introduction templates."),
+                      ("フィールドも設定が可能な埋め込み作成コマンド", "Create embed with configurable fields as well."),
+                      ("特定のロールが付与/剥奪された際に他を付与/剥奪する機能", "Ability to grant/strip other roles when a specific role is granted/stripped."),
+                      ("自動返信", "Auto Reply"), ("ボイスチャンネルに入ったら付与されるロール", "Roles granted when users enter a voice channel."),
+                      ("その他諸々", "Other")
+                    )) ^^
                 </div>
             </div>
             <br>
             <div class="introduce-wrapper-black">
                 <div class="introduce">
-                    <h2>便利な機能</h2>
-                    以下のような便利なサーバーツールがあります。
+                    <h2>^^ _(ja="便利な機能", en="Convenient") ^^</h2>
+                    ^^ _(
+                      ja="以下のような便利なサーバーツールがあります。",
+                      en="Some useful server tools are:"
+                    ) ^^
                     <ol>
                         <li>レベル機能、レベルロール</li>
                         <li>引用のように表示するメッセージリンク展開</li>
