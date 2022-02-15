@@ -1,4 +1,11 @@
-brython
 .DS_Store
 *.*-workspace
 *.*~
+
+google*.html
+
+*.wav
+*.ogg
+*.mp3
+
+img/gban
