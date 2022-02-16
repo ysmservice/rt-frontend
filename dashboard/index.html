@@ -1,10 +1,18 @@
 ^^ manager.render(
-    "rt-frontend/dashboard/layout.html", content="""
+    "rt-frontend/dashboard/layout.html", content=f'''
     <div id="default">
-        <h1>ダッシュボードへようこそ (ベータ)</h1>
-        ここではRTの設定をウェブで行うことができます。<br>
-        一応全てのコマンドが実行できますが、一部できないことがあるかもしれません。<br>
-        その時はお手数ですがDiscordから設定を行なってください。
+        {self.l(ja="ダッシュボードへようこそ (ベータ)", en="Dashboard (Beta)", tag="h1")}
+        {self.l(
+            ja="""
+            ここではRTの設定をウェブで行うことができます。<br>
+            一応全てのコマンドが実行できますが、一部できないことがあるかもしれません。<br>
+            その時はお手数ですがDiscordから設定を行なってください。
+            """, en="""
+            Here you can configure RT on the web.<br>
+            All commands can be executed just in case, but some may not be possible.<br>
+            In that case, I am sorry to trouble you, but please set it from Discord.
+            """
+        )}
     </div>
-    """
+    '''
 ) ^^

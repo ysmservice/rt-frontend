@@ -3,14 +3,12 @@
     f"""
     <h1 class="title">ウェブ認証 / Web Captcha</h1>
     <form action="{redirect_url}?data={session}" method="POST">
-        <p>ロボットではないことを証明しましょう！</p>
+        {_(ja="ロボットではないことを証明しましょう！", en="Let's prove we're not robots!", tag="p")}
         <div class="h-captcha" data-sitekey="{sitekey}"></div>
         <br />
         <input type="submit" value="Submit" />
     </form>
-    <br />
-    <br />
-    <br />
+    <br /><br /><br />
     """, """
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs2015.min.css">
