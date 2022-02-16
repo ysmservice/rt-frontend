@@ -1,33 +1,47 @@
 ^^ self.layout(
-    "プライバシーポリシー | RT Discord Bot", "他にはないような機能を提供している多機能Botの利用規約です。",
-    """
+    "Privacy Policy | RT Discord Bot", "他にはないような機能を提供している多機能Botの利用規約です。",
+    f'''
 <h1 class="title">
-  プライバシーポリシー
+  Privacy Policy
 </h1>
 <div class="content terms-html">
-  RTを経由して取得したデータの扱いについてをここに書きます。<br>
-  ここではRTを管理するグループを当グループと呼びます。
-  <h1>収集する情報</h1>
-  <h2>全般</h2>
-  RTは取得したデータのほとんどをログに取ります。<br>
-  これはRTに発生した不具合等の解決を容易にするためのものであり、何かの分析等のために取得したデータを保管をすることは一切ないです。<br>
-  そして、そのログは数時間程しか保管されません。<br>
-  <strong>例：</strong>
+  {_(
+    ja="""RTを経由して取得したデータの扱いについてをここに書きます。<br>
+    ここではRTを管理するグループを当グループと呼びます。""",
+    en="""The handling of data acquired via RT is described here.<br>
+    In this section, the group that manages RT is called this group."""
+  )}
+  {_(ja="収集する情報", en="What do we collect?", tag="h1")}
+  {_(ja="全般", en="General", tag="h2")}
+  {_(
+    ja="""RTは取得したデータのほとんどをログに取ります。<br>
+    これはRTに発生した不具合等の解決を容易にするためのものであり、何かの分析等のために取得したデータを保管をすることは一切ないです。<br>
+    そして、そのログは数時間程しか保管されません。<br>""",
+    en="""RT logs most of the data it acquires.<br>
+    This is to facilitate the resolution of any problems that may occur with RT, and the data is not stored for any kind of analysis.<br>
+    And mostly the logs are only kept for a few hours."""
+  )}
+  {_(ja="例", en="Example", tag="strong")}
   <ul>
-    <li>メッセージ内容</li>
-    <li>作成したチャンネル等の内容</li>
+    {_(ja="メッセージ内容", en="Message content", tag="li")}
+    {_(ja="作成したチャンネル等の内容", en="Content of the created channel, etc.", tag="li")}
   </ul>
-  <h2>その他</h2>
+  {_(ja="その他", en="Other", tag="h2")}
   <ul>
-    <li><strong>クッキー：</strong>ウェブサイトでのログイン状態の記録に使いその記録を読み取ることがあります。</li>
-    <li><strong>GBAN,SBANのための証拠：</strong>RTにあるGBAN,SBANの機能での危険人物の証拠画像等のメディアを保管することがあります。</li>
+    {_(
+      ja="<strong>クッキー：</strong>ウェブサイトでのログイン状態の記録に使います。",
+      en="<strong>Cookies：</strong>Used to record the login status on a website.",
+      tag="li"
+    )}
+    {_(
+      ja="<strong>GBAN,SBANのための証拠：</strong>RTにあるGBAN,SBANの機能での危険人物の証拠画像等のメディアを保管することがあります。",
+      en="<strong>Evidence for GBAN,SBAN：</strong>We may store media such as images of evidence of dangerous people in the GBAN and SBAN functions in RT.",
+      tag="li"
+    )}
   </ul>
-  <h1>情報の譲渡等</h1>
-  することはないです。<br>
-  当グループの中でのみ使用されます。
-  <h1>セキュリティ</h1>
-  同然最善を尽くして取得したデータを守りたいと思っています。
+  {_(ja="情報の譲渡等", en="Transfer of information, etc.", tag="h1")}
+  {_(ja="することはないです。<br>当グループの中でのみ使用されます。", en="We don't do this.")}
   <br><br>
-  最終更新日 2022/1/18
-</div>""",  ""
+  Last update: 2022/2/16
+</div>''',  ""
 ) ^^

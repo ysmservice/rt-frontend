@@ -19,42 +19,41 @@ credit = lambda copyrights: "".join(
 
 self.layout(
     "Credit | RT Discord Bot", "他にはないような機能を提供している多機能BotであるRTのクレジットです。",
-    """
-    <h1 class="title">クレジット</h1>
+    f'''
+    <h1 class="title">Credit</h1>
     <div class="content credit-html">
-        <h1>アイコン</h1>
+        <h1>Icon</h1>
         <div class="icon">
             <img src="img/icon.png">
             <div>
-                作成者: Takkun<br>
-                ライセンス: <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode.ja" target="_blank">CC BY-ND 4.0</a>
+                Author: Takkun<br>
+                LICENSE: <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode.ja" target="_blank">CC BY-ND 4.0</a>
             </div>
         </div>
-        <h1>動作環境等</h1>
-        <h2>バックエンド</h2>
+        <h1>Environment</h1>
+        <h2>Backend</h2>
         <div class="icon">
             <img src="img/arch.svg">
             <div>
-                OS: <a href="https://archlinux.org/" target="_blank">Arch Linux</a> (SnavyさんのVPSです、ありがとうございます！)<br>
-                開発言語: <a href="https://www.python.org/" target="_blank">Python</a><br>
+                OS: <a href="https://archlinux.org/" target="_blank">Arch Linux</a> (Snavy's vps)<br>
+                Language: <a href="https://www.python.org/" target="_blank">Python</a><br>
             </div>
         </div>
-        <h3>使用しているライブラリ</h3>
+        <h3>Libraries</h3>
         <ul>{}</ul>
         <h2>Bot</h2>
         <div class="icon">
             <img src="/img/ubuntu.png">
             <div>
                 OS: Ubuntu Server<br>
-                開発言語: Python
+                Language: Python
             </div>
         </div>
-        <h3>使用しているライブラリ</h3>
+        <h3>Libraries</h3>
         <ul>{}</ul>
-        <h3>その他</h3>
-        読み上げにはOpenJTalk, AquesTalk 評価版の二つを使用しています。<br>
-        OpenJTalkの音源は<code>rt!voice</code>で確認ができます。
-        <h1>RTの開発者</h1>
+        <h3>Other</h3>
+        {}
+        <h1>RT Admin</h1>
         <h2>tasuren</h2>
         <div class="icon">
             <img src="img/tasuren.png">
@@ -125,7 +124,7 @@ self.layout(
             </div>
         </div>
     </div>
-    """.format(
+    '''.format(
         credit(
             (
                 ("https://github.com/sanic-org/sanic/blob/main/LICENSE", "Sanic",
@@ -163,6 +162,12 @@ self.layout(
                     "Copyright (c) 2009-2022 Joshua Roesslein"),
                 ("https://github.com/sivel/speedtest-cli/blob/master/LICENSE", "speedtest-cli", "")
             )
+        ),
+        _(
+            ja="""読み上げにはOpenJTalk, gTTS, AquesTalk 評価版の三つを使用しています。<br>
+            OpenJTalkの音源は<code>rt!voice</code>で確認ができます。""",
+            en="""RT using OpenJTalk, gTTS and AquesTalk evaluation version for reading out loud.<br>
+            You can check the OpenJTalk sound source using <code>rt!voice</code>."""
         )
     ), ""
 ) ^^
