@@ -1,10 +1,22 @@
 //! 多言語対応用JS
 
 
-window.onload = function() {
-    // 日本語と英語の言語置き換えをする。
+/**
+ * 言語を取得します。
+ * @returns String
+ */
+export function getLanguage() {
     var lang = (navigator.language) ? navigator.language : navigator.userLanguage;
     if (lang === undefined) lang = "ja";
+    return lang;
+}
+
+
+/**
+ * 言語の置き換えをします。
+ */
+export function replaceLanguage() {
+    let lang = getLanguage();
 
     // 言語の表示切り替えを行う。
     for (let element of document.getElementsByClassName("language")) {

@@ -1,3 +1,26 @@
+// Helpとステータス
+
+import { getLanguage } from "./language.js";
+
+
+const FIRST_HELP = `<a href="/help.html?g=bot" class="item">Bot関連</a>
+<a href="/help.html?g=server-tool" class="item">サーバー ツール</a>
+<a href="/help.html?g=server-panel" class="item">サーバー パネル</a>
+<a href="/help.html?g=server-safety" class="item">サーバー 安全</a>
+<a href="/help.html?g=server-useful" class="item">サーバー 便利</a>
+<a href="/help.html?g=individual" class="item">個人</a>
+<a href="/help.html?g=entertainment" class="item">娯楽</a>
+<a href="/help.html?g=chplugin" class="item">チャンネルプラグイン</a>
+<a href="/help.html?g=music" class="item">音楽</a>
+<a href="/help.html?g=other" class="item">その他</a>`;
+const FIRST_HELP_EN = FIRST_HELP
+    .replace("Bot関連", "Bot General").replace("サーバー ツール", "Server Tool")
+    .replace("サーバー パネル", "Server Panel").replace("サーバー 安全", "Server Safety")
+    .replace("サーバー 便利", "Server Useful").replace("個人", "Individual")
+    .replace("娯楽", "Entertainment").replace("チャンネルプラグイン", "Channel Plugin")
+    .replace("音楽", "Music").replace("その他", "Other");
+
+
 export const main = (api_url, params) => {
     $.ajax({
         url: `${api_url}/account/`,
@@ -61,18 +84,7 @@ export const main = (api_url, params) => {
 
         case "/help.html":
             if (!params.get("g") && !params.get("c")) {
-                $(".help-html").html(
-                    `<a href="/help.html?g=bot" class="item">Bot関連</a>
-                    <a href="/help.html?g=server-tool" class="item">サーバー(ツール)</a>
-                    <a href="/help.html?g=server-panel" class="item">サーバー(パネル)</a>
-                    <a href="/help.html?g=server-safety" class="item">サーバー(安全)</a>
-                    <a href="/help.html?g=server-useful" class="item">サーバー(便利)</a>
-                    <a href="/help.html?g=individual" class="item">個人</a>
-                    <a href="/help.html?g=entertainment" class="item">娯楽</a>
-                    <a href="/help.html?g=chplugin" class="item">チャンネルプラグイン</a>
-                    <a href="/help.html?g=music" class="item">音楽</a>
-                    <a href="/help.html?g=other" class="item">その他</a>`
-                )
+                $(".help-html").html(FIRST_HELP)
             } else if (params.get("g") && !params.get("c")) {
                 $.ajax({
                     url: `${api_url}/help/get/${params.get("g")}/`,
