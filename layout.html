@@ -14,10 +14,6 @@
         ^^
         <meta name="theme-color" content="#6E3DD9">
         <link rel="icon" href="/img/favicon.ico">
-        <script type="text/javascript">
-            import { replaceLanguage } from "/js/language.js";
-            replaceLanguage();
-        </script>
     </head>
     <body>
         <header>
@@ -44,10 +40,8 @@
                     <span class="m account">
                         <a class="name"></a>
                         <div class="dropdown">
-                            ^^ _(ja="ダッシュボード", en="Dashboard", tag="a") \
-                                .replace("a", 'a href="/dashboard"') ^^
-                            ^^ _(ja="ログアウト", en="Logout", tag="a") \
-                                .replace("a", 'a href="/api/account/logout"') ^^
+                            <a href="/dashboard">Dashboard</a>
+                            <a href="/api/account/logout">Log out</a>
                         </div>
                     </span>
                 </div>

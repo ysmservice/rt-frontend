@@ -111,8 +111,10 @@ export function get(data, key, defaultValue) {
 /**
  * 渡された連想配列から渡されたユーザーデータにのユーザーに相応しい言語の文字列を取り出します。
  */
-export function getText(data, user) {
-    return get(data, user.language, data.ja);
+export function getText(data, user, lang) {
+    if (lang == "ja")
+        return get(data, user.language, data.ja);
+    else return get(data, "en", data.ja)
 };
 
 

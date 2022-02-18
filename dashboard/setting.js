@@ -4,6 +4,7 @@ import {
     checkResponse, makeSelect, addBr, getErrorMessage,
     getText, sort, get, createOptions
 } from './utils.js';
+import { getLanguage } from "/js/language.js";
 
 
 let mainLoading = document.getElementById("main-loading");
@@ -13,6 +14,8 @@ const DEFAULT_HEADDING = {ja: ""};
 
 export function main_function(user) {
     // メインの関数です。
+
+    let lang = getLanguage();
 
     let commands = document.getElementById("commands");
     let search = document.getElementById("search");
@@ -113,7 +116,7 @@ export function main_function(user) {
                 sort(Object.keys(data), data, false).map(name => {
                     // 全般準備
                     id = `item-${name.replace(/\s/g, "-")}`;
-                    headding = getText(get(data[name], "headding", DEFAULT_HEADDING), user);
+                    headding = getText(get(data[name], "headding", DEFAULT_HEADDING), user, lang);
                     item = document.createElement("div");
                     item.setAttribute("class", "accordion-item");
                     item.setAttribute("data-for-search", `${name}_${headding}`);

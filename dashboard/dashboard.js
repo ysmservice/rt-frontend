@@ -1,10 +1,12 @@
 // RT Dashboard
 
 import { checkResponse } from './utils.js';
+import { replaceLanguage } from '/js/language.js';
 
 
 // 各JavaScriptを実行する。
 window.onload = function() {
+    replaceLanguage();
     let user;
     fetch(new Request("/api/account", {method: "GET"}))
         .then(response => {

@@ -22,6 +22,9 @@ const FIRST_HELP_EN = FIRST_HELP
 
 
 export const main = (api_url, params) => {
+    let lang = getLanguage().startsWith("ja") ? "ja" : "en";
+    let langParam = `?lang=${lang}`;
+
     $.ajax({
         url: `${api_url}/account/`,
         type: "get",
@@ -84,10 +87,10 @@ export const main = (api_url, params) => {
 
         case "/help.html":
             if (!params.get("g") && !params.get("c")) {
-                $(".help-html").html(FIRST_HELP)
+                $(".help-html").html(getLanguage().startsWith("ja") ? FIRST_HELP : FIRST_HELP_EN)
             } else if (params.get("g") && !params.get("c")) {
                 $.ajax({
-                    url: `${api_url}/help/get/${params.get("g")}/`,
+                    url: `${api_url}/help/get/${params.get("g")}${langParam}`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
@@ -118,7 +121,7 @@ export const main = (api_url, params) => {
                 })
             } else if (params.get("g") && params.get("c")) {
                 $.ajax({
-                    url: `${api_url}/help/get/${params.get("g")}/${params.get("c")}/`,
+                    url: `${api_url}/help/get/${params.get("g")}/${params.get("c")}${langParam}`,
                     type: "get",
                     dataType: "json"
                 }).done(data => {
