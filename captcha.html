@@ -3,7 +3,7 @@
     f"""
     <h1 class="title">ウェブ認証 / Web Captcha</h1>
     <form action="{redirect_url}?data={session}" method="POST">
-        {_(ja="ロボットではないことを証明しましょう！", en="Let's prove we're not robots!", tag="p")}
+        {self.l(ja="ロボットではないことを証明しましょう！", en="Let's prove we're not robots!", tag="p")}
         <div class="h-captcha" data-sitekey="{sitekey}"></div>
         <br />
         <input type="submit" value="Submit" />
