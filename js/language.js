@@ -38,8 +38,7 @@ export function replaceLanguage() {
     };
 
     // hiddenは全て消す。
-    for (let element of document.getElementByClassName("language")) {
+    for (let element of document.getElementsByClassName("language"))
         if (typeof element !== "undefined")
             if (element.hidden) element.remove();
-    };
 };
