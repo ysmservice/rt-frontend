@@ -34,6 +34,7 @@ export function replaceLanguage() {
             if (before.classList.contains("ja") && element.classList.contains("en")
                     && before.hidden && element.hidden)
                 element.hidden = false;
+            if (before.hidden) before.remove();
         before = element;
     };
 };
