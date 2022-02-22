@@ -28,16 +28,6 @@ export function checkResponse(response) {
 
 
 /**
- * HTMLをエスケープします。
- */
-export function escapeHtml(str) {
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-};
-
-
-/**
  * 渡された連想配列をソートします。
  */
 export function sort(keys, data, value=true) {

@@ -1,0 +1,48 @@
+^^ self.layout(
+  "News | RT Discord Bot", "他にはないような機能を提供している多機能Bot。",
+  f"""
+  <div class="title">
+    <h1>Rocations</h1>
+    {self.l(ja="サーバー掲示板", en="Server BBS", tag="h3")}
+  </div>
+  
+  <div class="content">
+    <h1>サーバー一覧</h1>
+    <div id="loading" class="d-flex justify-content-center">
+      <div class="spinner-border m-lg-5" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div id="main">
+      <!-- サーバー一覧 -->
+      <div id="guilds"></div>
+      <!-- ページ -->
+      <nav aria-label="page">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <div id="page-items">
+          </div>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  """,
+  """
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs2015.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
+  <script src="/rocations/main.js"></script>
+  """
+) ^^
