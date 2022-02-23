@@ -232,17 +232,11 @@ header .menu .menu-list .account .dropdown a:hover {
 }
 
 .content a {
-  color: #6E3DD9;
-  text-decoration: none;
   -webkit-transition: all 500ms 0s ease-in-out;
   transition: all 500ms 0s ease-in-out;
 }
 
-.content a:hover {
-  color: #D90DA2;
-}
-
-.content .btn {
+.content .rtbtn {
   padding: 1rem 2rem;
   margin: 1rem .5rem;
   border: solid #6E3DD9;
@@ -256,7 +250,7 @@ header .menu .menu-list .account .dropdown a:hover {
           user-select: none;
 }
 
-.content .btn:hover {
+.content .rtbtn:hover {
   background-color: #FFF;
   color: #6E3DD9;
 }

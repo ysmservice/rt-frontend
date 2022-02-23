@@ -7,31 +7,29 @@
   </div>
   
   <div class="content">
-    <h1>サーバー一覧</h1>
-    <div id="loading" class="d-flex justify-content-center">
-      <div class="spinner-border m-lg-5" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
+    {self.l(ja="サーバー一覧", en="Server List", tag="h1")}
+    {self.l(
+      ja='''
+      DiscordのBotのRTに登録されているサーバーのリストです。<br>
+      あなたはRTをサーバーに導入して<code>rt!rocations register</code>と実行することでここにサーバーを登録することができます。
+      ''', en='''
+      This is a list of servers that are registered with RT for Discord bots.<br>
+      You can register your server here by installing RT on your server and running <code>rt!rocations register</code>.
+      '''
+    )}
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border m-5" id="loading" role="status"></div>
     </div>
-
-    <div id="main">
+    <hr>
+    <div id="main" class="p-5">
       <!-- サーバー一覧 -->
-      <div id="guilds"></div>
+      <div class="container overflow-hidden">
+        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-5" id="guilds"></div>
+      </div>
+      <br><br>
       <!-- ページ -->
       <nav aria-label="page">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <div id="page-items">
-          </div>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
+        <ul class="pagination justify-content-center" id="page-items">
         </ul>
       </nav>
     </div>
@@ -40,9 +38,16 @@
   """
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs2015.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
-  <script src="/rocations/main.js"></script>
+  <script src="/rocations/main.js" type="module"></script>
+  <style>
+    .scroll-box {
+      height: 200px;
+      overflow-y: scroll;
+    }
+  </style>
   """
 ) ^^
