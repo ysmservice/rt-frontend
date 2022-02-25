@@ -37,3 +37,15 @@ export function replaceLanguage() {
         before = element;
     };
 };
+
+
+export const LANGUAGE = getLanguage();
+export const ISJA = LANGUAGE.startsWith("ja");
+
+
+/**
+ * 渡された辞書からブラウザの言語のコードのキーの値をしゅとくしてかえします。
+ */
+export function getText(data) {
+    return data[LANGUAGE]
+};

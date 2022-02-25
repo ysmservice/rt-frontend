@@ -1,5 +1,5 @@
 ^^ self.layout(
-  "News | RT Discord Bot", "他にはないような機能を提供している多機能Bot。",
+  "Rocations | RT Discord Bot", "他にはないような機能を提供している多機能Botのサーバー掲示板のRocationsです。",
   f"""
   <div class="title">
     <h1>Rocations</h1>
@@ -16,15 +16,27 @@
       This is a list of servers that are registered with RT for Discord bots.<br>
       You can register your server here by installing RT on your server and running <code>rt!rocations register</code>.
       '''
-    )}
+    )}<div id="extras"></div>
+    <hr>
+    <br>
+    <form action="" method="GET" class="row justify-content-evenly">
+      <div class="col">
+        <input class="form-control search" type="search" name="search" placeholder="Search" aria-label="Search" required>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-success language ja" type="submit" hidden>検索</button>
+        <button class="btn btn-outline-success language en" type="submit" hidden>Search</button>
+      </div>
+    </form>
+    <br>
     <div class="d-flex justify-content-center">
       <div class="spinner-border m-5" id="loading" role="status"></div>
     </div>
-    <hr>
-    <div id="main" class="p-5">
+
+    <div id="main">
       <!-- サーバー一覧 -->
-      <div class="container overflow-hidden">
-        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-5" id="guilds"></div>
+      <div class="overflow-hidden">
+        <div class="row row-cols-1 row-cols-xxl-3 row-cols-md-2 row-cols-1 g-sm-0 g-xl-3" id="guilds"></div>
       </div>
       <br><br>
       <!-- ページ -->
@@ -42,6 +54,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs2015.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/rocations/main.js" type="module"></script>
   <style>
     .scroll-box {
