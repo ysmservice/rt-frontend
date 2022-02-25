@@ -22,7 +22,7 @@ body {
 
 header {
   height: 3.5rem;
-  padding: 0 10%;
+  padding: 0 5%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
