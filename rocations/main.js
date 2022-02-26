@@ -15,7 +15,7 @@ function makeReview(nice) {
                 </div>
                 <div class="ms-3">
                     <h5>${escapeHtml(nice.user.name)}</h5>
-                    <div class="card-text">${marked.parse(nice.message)}</div>
+                    <div class="card-text">${marked.parse(escapeHtml(nice.message))}</div>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@ window.onload = function() {
                                 <!-- Description -->
                                 <div class="card-text">
                                     <div class="scroll-box">
-                                        ${marked.parse(data[key].description)}
+                                        ${marked.parse(escapeHtml(data[key].description))}
                                     </div>
                                 </div>
                             </div>
