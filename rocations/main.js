@@ -65,6 +65,7 @@ window.onload = function() {
     let searchParams = new URLSearchParams(window.location.search);
     var page = searchParams.get("page"), extendQuery = "";
     if (page === null) page = 1;
+    else page = Number(page);
     let search = searchParams.get("search");
     var tags = null;
     if (search) {
