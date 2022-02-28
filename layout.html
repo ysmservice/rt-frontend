@@ -13,6 +13,8 @@
     <meta name="theme-color" content="#6E3DD9">
     <link rel="icon" href="/img/favicon.ico">
     <script type="module">
+      // アカウントのログイン処理をする。
+
       import { replaceLanguage } from "/js/language.js";
 
       replaceLanguage();
@@ -22,7 +24,7 @@
         .then(data => {
           if (data.status == 200 && data.data.login) {
             data = data.data;
-            document.getElementById("login").hidden = true;
+            document.getElementById("login").remove();
             document.getElementById("userName").innerText = data.user_name;
             document.getElementById("account").setAttribute("style", "display: inline !important;");
           };
