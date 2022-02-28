@@ -1,159 +1,173 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/main.css">
-        <script src="/js/main.js" type="module"></script>
-        ^^
-        self.menuItem = lambda url, ja, en: f'<a href="{url}" class="m language ja" hidden>{ja}</a>' \
-            f'<a href="{url}" class="m language en" hidden>{en}</a>'
-        head
-        ^^
-        <meta name="theme-color" content="#6E3DD9">
-        <link rel="icon" href="/img/favicon.ico">
-    </head>
-    <body>
-        <header>
-            <a href="/" class="logo">RT Discord Bot</a>
-            <div class="margin"></div>
-            <label class="menu">
-                <input type="checkbox">
-                <div class="menu-btn">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="menu-list">
-                    ^^ self.menuItem("/news.html", "ニュース", "News") ^^
-                    ^^ self.menuItem("/help.html", "ヘルプ", en="Help") ^^
-                    ^^ self.menuItem("/rocations", "サーバー掲示板", en="Server BBS") ^^
-                    ^^ self.menuItem("https://discord.gg/ugMGw5w", "サポートサーバー", "Support Server") ^^
-                    ^^ self.menuItem(
-                        "https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&redirect_uri=https%3A%2F%2Frt-bot.com&response_type=code&scope=bot%20applications.commands",
-                        "導入する", "Invite"
-                    ) ^^
-                    ^^ self.menuItem(
-                        "/api/account/login", "ログイン", "Login"
-                    ).replace("m", "m login") ^^
-                    <span class="m account">
-                        <a class="name"></a>
-                        <div class="dropdown">
-                            <a href="/dashboard">Dashboard</a>
-                            <a href="/api/account/logout">Log out</a>
-                        </div>
-                    </span>
-                </div>
-            </label>
-        </header>
-        ^^ content ^^
-        <footer>
-            <div class="menu">
-                <a href="/">
-                    <img src="/img/icon.png">
-                </a>
-                <div class="menu-list">
-                    <div class="item">
-                        <div class="m-title">Main</div>
-                        <div>
-                            <a href="/news.html" class="language ja" hidden>ニュース</a>
-                            <a href="/news.html" class="language en" hidden>News</a>
-                        </div>
-                        <div>
-                            <a href="/help.html" class="language ja" hidden>ヘルプ</a>
-                            <a href="/help.html" class="language en" hidden>Help</a>
-                        </div>
-                        <div>
-                            <a href="/credit.html" class="language ja" hidden>クレジット</a>
-                            <a href="/credit.html" class="language en" hidden>Credit</a>
-                        </div>
-                        <div>
-                            <a href="/terms.html" class="language ja" hidden>利用規約</a>
-                            <a href="/terms.html" class="language en" hidden>Terms of Uses</a>
-                        </div>
-                        <div>
-                            <a href="/privacy.html" class="language ja" hidden>プライバシーポリシー</a>
-                            <a href="/privacy.html" class="language en" hidden>Privacy Policy</a>
-                        </div>
-                        <div>
-                            <a href="/status.html">Status</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="m-title">Help</div>
-                        <div>
-                            <a href="/help.html?g=bot">Bot General</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=server-tool" class="language ja" hidden>サーバー(ツール)</a>
-                            <a href="/help.html?g=server-tool" class="language en" hidden>Server Tool</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=server-panel" class="language ja" hidden>サーバー(パネル)</a>
-                            <a href="/help.html?g=server-panel" class="language en" hidden>Server Panel</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=server-safety" class="language ja" hidden>サーバー(安全)</a>
-                            <a href="/help.html?g=server-safety" class="language en" hidden>Server Safety</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=server-useful" class="language ja" hidden>サーバー(便利)</a>
-                            <a href="/help.html?g=server-useful" class="language en" hidden>Server Useful</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=individual" class="language ja" hidden>個人</a>
-                            <a href="/help.html?g=individual" class="language en" hidden>Individual</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=entertainment" class="language ja" hidden>娯楽</a>
-                            <a href="/help.html?g=entertainment" class="language en" hidden>Entertainment</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=chplugin" class="language ja" hidden>チャンネルプラグイン</a>
-                            <a href="/help.html?g=chplugin" class="language en" hidden>Channel Plugin</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=music" class="language ja" hidden>音楽再生</a>
-                            <a href="/help.html?g=music" class="language en" hidden>Music</a>
-                        </div>
-                        <div>
-                            <a href="/help.html?g=other">Other</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="m-title">Links</div>
-                        <div>
-                            <a href="https://discord.gg/ugMGw5w" target="_blank" class="language ja" hidden>サポートサーバー</a>
-                            <a href="https://discord.gg/ugMGw5w" target="_blank" class="language en" hidden>Support Server</a>
-                        </div>
-                        <div>
-                            <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&redirect_uri=https%3A%2F%2Frt-bot.com&response_type=code&scope=bot%20applications.commands"
-                                target="_blank">Invite URL</a>
-                        </div>
-                        <div>
-                            <a href="https://twitter.com/RtDiscordBot" target="_blank">Twitter</a>
-                        </div>
-                        <div>
-                            <a href="https://github.com/RT-Team" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="m-title">Dashboard</div>
-                        <div>
-                            <a href="/dashboard">Home</a>
-                        </div>
-                        <div>
-                            <a href="/api/account/login">Login</a>
-                        </div>
-                        <div>
-                            <a href="/api/account/logout">Logout</a>
-                        </div>
-                    </div>
-                </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css">
+    ^^
+    self.menuItem = lambda url, ja, en: f'<a href="{url}" class="m language ja" hidden>{ja}</a>' \
+    f'<a href="{url}" class="m language en" hidden>{en}</a>'
+    head
+    ^^
+    <meta name="theme-color" content="#6E3DD9">
+    <link rel="icon" href="/img/favicon.ico">
+    <script type="module">
+      import { replaceLanguage } from "/js/language.js";
+
+      replaceLanguage();
+
+      fetch(new Request("/api/account"))
+        .then(response => { return response.json(); })
+        .then(data => {
+          if (data.status == 200 && data.data.login) {
+            data = data.data;
+            document.getElementById("login").hidden = true;
+            document.getElementById("userName").innerText = data.user_name;
+            document.getElementById("account").setAttribute("style", "display: inline !important;");
+          };
+        });
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">RT Discord Bot</a>
+      <div class="margin"></div>
+      <label class="menu">
+        <input type="checkbox">
+        <div class="menu-btn">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="menu-list">
+          ^^ self.menuItem("/news.html", "ニュース", "News") ^^
+          ^^ self.menuItem("/help.html", "ヘルプ", en="Help") ^^
+          ^^ self.menuItem("/rocations", "サーバー掲示板", en="Server BBS") ^^
+          ^^ self.menuItem("https://discord.gg/ugMGw5w", "サポートサーバー", "Support Server") ^^
+          ^^ self.menuItem(
+            "https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&redirect_uri=https%3A%2F%2Frt-bot.com&response_type=code&scope=bot%20applications.commands",
+            "導入する", "Invite"
+          ) ^^
+          ^^ self.menuItem(
+            "/api/account/login", "ログイン", "Login"
+          ).replace("m", "m login").replace("hidden", 'id="login" hidden') ^^
+          <span class="m account" id="account">
+            <a class="name" id="userName"></a>
+            <div class="dropdown">
+              <a href="/dashboard">Dashboard</a>
+              <a href="/api/account/logout">Log out</a>
             </div>
-            <div class="copyright">Copyright © 2020-2021 RT-Team. All Rights Reserved.</div>
-        </footer>
-    </body>
+          </span>
+        </div>
+      </label>
+    </header>
+    ^^ content ^^
+    <footer>
+      <div class="menu">
+        <a href="/">
+          <img src="/img/icon.png">
+        </a>
+        <div class="menu-list">
+          <div class="item">
+            <div class="m-title">Main</div>
+            <div>
+              <a href="/news.html" class="language ja" hidden>ニュース</a>
+              <a href="/news.html" class="language en" hidden>News</a>
+            </div>
+            <div>
+              <a href="/help.html" class="language ja" hidden>ヘルプ</a>
+              <a href="/help.html" class="language en" hidden>Help</a>
+            </div>
+            <div>
+              <a href="/credit.html" class="language ja" hidden>クレジット</a>
+              <a href="/credit.html" class="language en" hidden>Credit</a>
+            </div>
+            <div>
+              <a href="/terms.html" class="language ja" hidden>利用規約</a>
+              <a href="/terms.html" class="language en" hidden>Terms of Uses</a>
+            </div>
+            <div>
+              <a href="/privacy.html" class="language ja" hidden>プライバシーポリシー</a>
+              <a href="/privacy.html" class="language en" hidden>Privacy Policy</a>
+            </div>
+            <div>
+              <a href="/status.html">Status</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="m-title">Help</div>
+            <div>
+              <a href="/help.html?g=bot">Bot General</a>
+            </div>
+            <div>
+              <a href="/help.html?g=server-tool" class="language ja" hidden>サーバー(ツール)</a>
+              <a href="/help.html?g=server-tool" class="language en" hidden>Server Tool</a>
+            </div>
+            <div>
+              <a href="/help.html?g=server-panel" class="language ja" hidden>サーバー(パネル)</a>
+              <a href="/help.html?g=server-panel" class="language en" hidden>Server Panel</a>
+            </div>
+            <div>
+              <a href="/help.html?g=server-safety" class="language ja" hidden>サーバー(安全)</a>
+              <a href="/help.html?g=server-safety" class="language en" hidden>Server Safety</a>
+            </div>
+            <div>
+              <a href="/help.html?g=server-useful" class="language ja" hidden>サーバー(便利)</a>
+              <a href="/help.html?g=server-useful" class="language en" hidden>Server Useful</a>
+            </div>
+            <div>
+              <a href="/help.html?g=individual" class="language ja" hidden>個人</a>
+              <a href="/help.html?g=individual" class="language en" hidden>Individual</a>
+            </div>
+            <div>
+              <a href="/help.html?g=entertainment" class="language ja" hidden>娯楽</a>
+              <a href="/help.html?g=entertainment" class="language en" hidden>Entertainment</a>
+            </div>
+            <div>
+              <a href="/help.html?g=chplugin" class="language ja" hidden>チャンネルプラグイン</a>
+              <a href="/help.html?g=chplugin" class="language en" hidden>Channel Plugin</a>
+            </div>
+            <div>
+              <a href="/help.html?g=music" class="language ja" hidden>音楽再生</a>
+              <a href="/help.html?g=music" class="language en" hidden>Music</a>
+            </div>
+            <div>
+              <a href="/help.html?g=other">Other</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="m-title">Links</div>
+            <div>
+              <a href="https://discord.gg/ugMGw5w" target="_blank" class="language ja" hidden>サポートサーバー</a>
+              <a href="https://discord.gg/ugMGw5w" target="_blank" class="language en" hidden>Support Server</a>
+            </div>
+            <div>
+              <a href="https://discord.com/api/oauth2/authorize?client_id=716496407212589087&permissions=8&redirect_uri=https%3A%2F%2Frt-bot.com&response_type=code&scope=bot%20applications.commands"
+                target="_blank">Invite URL</a>
+            </div>
+            <div>
+              <a href="https://twitter.com/RtDiscordBot" target="_blank">Twitter</a>
+            </div>
+            <div>
+              <a href="https://github.com/RT-Team" target="_blank">GitHub</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="m-title">Dashboard</div>
+            <div>
+              <a href="/dashboard">Home</a>
+            </div>
+            <div>
+              <a href="/api/account/login">Login</a>
+            </div>
+            <div>
+              <a href="/api/account/logout">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">Copyright © 2020-2021 RT-Team. All Rights Reserved.</div>
+    </footer>
+  </body>
 </html>
