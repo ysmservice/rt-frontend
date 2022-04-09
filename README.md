@@ -1,5 +1,5 @@
 # rt-frontend
-RTという多機能便利なDiscordのBotのフロントエンドであるウェブサイトのリポジトリです。  
+Free RTという多機能便利なDiscordのBotのフロントエンドであるウェブサイトのリポジトリです。  
 テンプレートエンジンに[miko](https://github.com/tasuren/miko)を使用しており、テンプレートである`layout.html`を継承して簡単にウェブページの一つ一つを作成することができます。  
 例：
 ```python
