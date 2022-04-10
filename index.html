@@ -11,7 +11,7 @@ self.layout(
             <div>
                 <h1>Free RT Discord Bot</h1>
                 <p>{_(
-                  ja="このBotだけで管理が済むとにかく多機能な次世代Bot",
+                  ja="便利で多機能な次世代Bot",
                   en="Convenient, feature-rich, modern Bot"
                 )}</p>
             </div>
@@ -20,8 +20,8 @@ self.layout(
             <h1>About</h1>
             {_(
               ja="""
-              Free RTはDiscordのとあるBotでとにかく多機能でこのBotだけでサーバー管理が済んでしまうという次世代Botです。<br>
-            強いて言えば読み上げと音楽プレイヤーがありサブのRTもあるので、もしかしたら音楽Botそして読み上げBotもRTに置き換えられますね。
+              Free RTは次世代の多機能discord Botです。RTというbotのフリーバージョンとなります。<br>
+              RTはtasurenという人が開発している有料botです。使いやすさや安定性はそちらの方がいいのでRTを使いたい場合はtasurenにお金を払いましょう。
               """, en="""
               Free RT is a Discord Bot that can do everything most Bots can.<br>
               You will only need this Bot to manage the server.
@@ -36,7 +36,7 @@ self.layout(
                 </div>
                 <div class="introduce">
                     {_(
-                      ja="豊富なサーバー管理に使えるツールなどの機能",
+                      ja="サーバー管理から娯楽にも使える豊富な機能",
                       en="Tools and server management tools",
                       tag="h2"
                     )}
@@ -86,11 +86,11 @@ self.layout(
                 <div class="introduce">
                     {_(
                         ja="""<h2>荒らし対策に使える機能</h2>
-                        最近ツールを使い自動でアカウントにスパムさせて荒らすというのが増えています。<br>
+                        最近ツールを使い自動でアカウントにスパムさせて荒らすという行為が増えています。<br>
                         そういう荒らし用捨てアカウントは画像,Web,合言葉認証で対策ができます。<br>
-                        そしてAutoMod機能を使うことでスパムを繰り返したらミュートやBANをすることもできます。<br>
+                        そしてAutoMod機能を使うことでスパムを繰り返した人をミュートやBANすることもできます。<br>
                         また招待リンク規制や絵文字制限などもできます。<br>
-                        さらに危険人物リストにあるユーザーをBANをするGBANというのもあります。""",
+                        さらに危険人物リストにあるユーザーをBANをするGBANという機能もあるので安心です。""",
                         en="""<h2>Features that can be used to prevent vandalism</h2>
                         More and more people are using tools to spam their accounts automatically.<br>
                         You can use images, the web, and password authentication to solve the problem.<br>
@@ -105,7 +105,7 @@ self.layout(
                     {_(
                         ja="""<h2>音楽プレイヤー</h2>
                         現時点でYouTube,ニコニコ動画,SoundCloudが再生できる音楽プレイヤーです。<br>
-                        またプレイリストを十個まで作れ一つのプレイリストに八百まで曲データを保存できます。<br>
+                        またプレイリストを十個まで作れて、一つのプレイリストに八百まで曲データを保存できます。<br>
                         お手軽にお気に入り曲を全て再生できます。""",
                         en="""<h2>Music Player</h2>
                         It is a music player that can play YouTube, Nico Nico Douga, and SoundCloud at the moment.<br>
@@ -127,7 +127,7 @@ self.layout(
                         声の種類を変更可能な読み上げ機能です。<br>
                         ゆっくり霊夢やゆっくり魔理沙にも声を変更可能です。<br>
                         また辞書機能もあります。<br>
-                        しかもお気に入りの<s>淫夢</s>素材を登録して読み上げ中に使いみんなを笑わすこともできます。(笑)""",
+                        しかも音声を特定の単語に登録して読み上げ中に使いみんなを笑わすこともできます。(笑)""",
                         en="""<h2>TTS</h2>
                         Reads out messages sent to the text channel in the voice channel.<br>
                         You can also play a meme sound source while reading out loud."""
@@ -137,13 +137,13 @@ self.layout(
             <div class="introduce-wrapper-black">
                 <div class="introduce">
                     {_(
-                        ja="<h2>その他娯楽など</h2>以下のような娯楽などの機能もあります。",
+                        ja="<h2>その他娯楽など</h2>以下のような楽しい機能もあります。",
                         en="<h2>Fun</h2>The following entertainment and other functions are available."
                     )}
                     {ol((
                         ("指定した地域の天気予報を毎日指定した時間にDMに送らせる機能",
                          f"Weather forecast notification {SNSE}"),
-                        ("マインスイーパーをする。", "Play minesweeper"),
+                        ("マインスイーパーをする機能", "Play minesweeper"),
                         ("Minecraft(Java版)のユーザーのスキンを表示", "Displays skin of Minecraft (java) user."),
                         ("今日は何の日か表示、毎日指定したチャンネルに送信", "Never gonna give you up"),
                         ('<a href="https://www3.nhk.or.jp/news/">NHKニュース</a>の最新ニュース表示',
